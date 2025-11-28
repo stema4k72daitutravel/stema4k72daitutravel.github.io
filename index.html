@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A4K72 Journey Web - Khám phá Đại Từ</title>
+    <!-- Tải Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tải Icon Lucide -->
+    <script type="module">
+        import { createIcons, Search, Menu, X, ChevronDown } from 'https://cdn.jsdelivr.net/npm/lucide@latest/dist/esm/lucide.js';
+        // Gọi createIcons() ngay sau khi import để đảm bảo các icon ban đầu được render
+        window.addEventListener('load', () => {
+            createIcons({ icons: { Search, Menu, X, ChevronDown } });
+        });
+    </script>
+    
+    <!-- Tải các font chữ yêu cầu và Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Dùng 'Great Vibes' và 'Cedarville Cursive' làm placeholder cho font script và font Safira March -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cedarville+Cursive&display=swap" rel="stylesheet">
+    
+    <!-- PHẦN CSS CHUNG ĐƯỢC ĐẨY LẠI VÀO ĐÂY -->
+    <style>
+        /* Định nghĩa Font-family tùy chỉnh */
+        /* Giả định: Luxutois Script là Great Vibes, Safira March là Cedarville Cursive (vì đây là font custom, cần có file nhúng thực tế) */
+        .font-luxutois {
+            font-family: 'Great Vibes', cursive;
+        }
+        .font-safira {
+            font-family: 'Cedarville Cursive', cursive;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #1f2937; /* Màu chữ mặc định */
+        }
+
+        /* Hiệu ứng hover cho menu dropdown (dù đã được thay bằng menu full-screen, vẫn giữ nếu muốn dùng lại) */
+        .group:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Cấu trúc menu full screen khi mở */
+        .mobile-nav-link, .mobile-dropdown-header {
+            display: block;
+            padding: 10px 15px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .mobile-dropdown-header {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            margin-top: 5px;
+        }
+
+        .mobile-dropdown-item {
+            display: block;
+            padding: 8px 30px;
+            color: #d1d5db; /* Màu xám nhạt */
+            font-size: 14px;
+        }
+
+        .mobile-nav-link:hover, .mobile-dropdown-item:hover {
+            color: #FFDE59;
+            background-color: rgba(255, 222, 89, 0.05);
+            border-radius: 4px;
+        }
+
+        /* Đảm bảo nội dung không bị che bởi navbar */
+        .min-h-screen {
+            min-height: calc(100vh - 64px); /* Chiều cao màn hình trừ đi Navbar */
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- PHẦN ĐẦU TRANG - THANH ĐIỀU HƯỚNG (Navbar) -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition duration-300 bg-[#102A0E] shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Tên Trang -->
+                <a href="#home" class="text-white font-extrabold text-sm sm:text-lg tracking-wider">
+                    A4K72 JOURNEY WEB
+                </a>
+
+                <!-- Nút Menu Toggle (Áp dụng cho mọi kích thước màn hình theo yêu cầu) -->
+                <button id="menu-toggle-desktop" class="text-white focus:outline-none p-2 rounded-lg">
+                    <i id="icon-menu-main" data-lucide="menu" class="w-6 h-6"></i>
+                    <i id="icon-x-main" data-lucide="x" class="w-6 h-6 hidden"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Toàn màn hình (Menu này sẽ được toggle) -->
+        <div id="full-menu" class="hidden absolute top-16 left-0 w-full bg-[#102A0E] transition-transform duration-300">
+             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="mobile-nav-link">Trang chủ</a>
+                <!-- Sử dụng cấu trúc Dropdown/Accordion cho Mobile Menu để tái sử dụng -->
+                <div class="mobile-dropdown">
+                    <div class="mobile-dropdown-header">Điểm du lịch</div>
+                    <a href="#diem-du-lich" class="mobile-dropdown-item">Du lịch sinh thái</a>
+                    <a href="#diem-du-lich" class="mobile-dropdown-item">Du lịch văn hoá</a>
+                </div>
+                <div class="mobile-dropdown">
+                    <div class="mobile-dropdown-header">Ẩm thực</div>
+                    <a href="#am-thuc" class="mobile-dropdown-item">Đặc sản</a>
+                    <a href="#am-thuc" class="mobile-dropdown-item">Món ăn nổi bật</a>
+                </div>
+                <div class="mobile-dropdown">
+                    <div class="mobile-dropdown-header">Lưu trú</div>
+                    <a href="#luu-tru" class="mobile-dropdown-item">Homestay</a>
+                    <a href="#luu-tru" class="mobile-dropdown-item">Lều - camping</a>
+                </div>
+                <div class="mobile-dropdown">
+                    <div class="mobile-dropdown-header">Hoạt động</div>
+                    <a href="#hoat-dong" class="mobile-dropdown-item">Bơi</a>
+                    <a href="#hoat-dong" class="mobile-dropdown-item">Tham quan</a>
+                    <a href="#hoat-dong" class="mobile-dropdown-item">Cắm trại</a>
+                    <a href="#hoat-dong" class="mobile-dropdown-item">Check in - chụp ảnh</a>
+                    <a href="#hoat-dong" class="mobile-dropdown-item">Vui chơi</a>
+                    <a href="#hoat-dong" class="mobile-dropdown-item">Di chuyển</a>
+                </div>
+                <a href="#lien-he" class="mobile-nav-link">Liên hệ</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- PHẦN THÂN TRANG - Hero Section -->
+    <section id="home" class="relative min-h-screen pt-16 flex items-center justify-center text-center overflow-hidden">
+        <!-- Ảnh Background giả lập đồi chè -->
+        <div class="absolute inset-0 bg-cover bg-center" 
+             style="background-image: url('https://placehold.co/1920x1080/102A0E/FFFFFF?text=Đồi+Chè+Đại+Từ'); filter: brightness(0.8);">
+        </div>
+        
+        <!-- Màu Overlay (Nếu cần) -->
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+
+        <!-- Nội dung chính giữa -->
+        <div class="relative z-10 p-4 max-w-4xl mx-auto">
+            <!-- Text 1: KHÁM PHÁ VẺ ĐẸP -->
+            <p class="text-3xl sm:text-5xl lg:text-6xl font-safira text-[#FFDE59] mb-[-10px] sm:mb-[-20px]">
+                KHÁM PHÁ VẺ ĐẸP
+            </p>
+            
+            <!-- Text 2: Đại Từ (Đã sửa để chỉ còn một lần hiển thị chữ lớn) -->
+            <h1 class="text-6xl sm:text-8xl lg:text-9xl font-luxutois text-white font-normal leading-none mb-4">
+                Đại Từ
+            </h1>
+            
+            <!-- Text 3: Slogan -->
+            <p class="text-xs sm:text-sm lg:text-base font-montserrat text-white font-medium tracking-widest uppercase mb-10 sm:mb-16">
+                THIÊN NHIÊN - LỊCH SỬ - VĂN HOÁ - TRẢI NGHIỆM
+            </p>
+
+            <!-- Nút BẮT ĐẦU HÀNH TRÌNH -->
+            <a href="#diem-du-lich" class="inline-block py-3 px-8 sm:py-4 sm:px-10 text-base sm:text-lg font-bold uppercase 
+                                          text-white bg-transparent border-2 border-[#FFDE59] 
+                                          rounded-full transition duration-300 hover:bg-[#FFDE59] hover:text-[#102A0E] shadow-xl">
+                BẮT ĐẦU HÀNH TRÌNH
+            </a>
+        </div>
+    </section>
+    
+    <!-- Phần Nội dung giới thiệu bên dưới (Dựa trên ảnh 1.png) -->
+    <section class="py-16 sm:py-24" id="intro">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Tiêu đề chính -->
+            <div class="mb-12">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-[#102A0E] mb-4 border-l-4 border-[#102A0E] pl-4">
+                    KHÁM PHÁ DU LỊCH ĐẠI TỪ - VÙNG ĐẤT XANH CỦA THÁI NGUYÊN
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Đại Từ - huyện miền núi phía Tây Thái Nguyên - nơi nổi tiếng với cảnh quan thiên nhiên tươi đẹp, hồ nước núi rừng và di tích lịch sử. Đây là điểm đến lý tưởng cho du khách yêu thích du lịch sinh thái và nghỉ dưỡng.
+                </p>
+            </div>
+
+            <!-- Gallery ảnh 4 cột -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                    <img src="https://placehold.co/600x400/102A0E/FFFFFF?text=Thác+nước" alt="Thác nước Đại Từ" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg text-[#102A0E] mb-1">Thác Khuôn Tát</h3>
+                        <p class="text-sm text-gray-500">Du lịch sinh thái</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                    <img src="https://placehold.co/600x400/102A0E/FFFFFF?text=Đài+phun+nước" alt="Đài phun nước" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg text-[#102A0E] mb-1">Tượng đài Chiến thắng</h3>
+                        <p class="text-sm text-gray-500">Di tích lịch sử</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                    <img src="https://placehold.co/600x400/102A0E/FFFFFF?text=Cổng+Di+tích" alt="Cổng di tích" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg text-[#102A0E] mb-1">Khu Di tích ATK</h3>
+                        <p class="text-sm text-gray-500">Du lịch văn hoá</p>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                    <img src="https://placehold.co/600x400/102A0E/FFFFFF?text=Suối+nước" alt="Suối nước" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg text-[#102A0E] mb-1">Suối Kẹm</h3>
+                        <p class="text-sm text-gray-500">Hoạt động bơi lội</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHẦN BỔ SUNG: ĐIỂM DU LỊCH (Placeholder để tăng chiều dài trang) -->
+    <section class="py-16 sm:py-24 bg-gray-50" id="diem-du-lich">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#102A0E] mb-8 border-l-4 border-[#FFDE59] pl-4">
+                1. ĐIỂM DU LỊCH NỔI BẬT
+            </h2>
+            <div class="space-y-12">
+                <!-- Mục Sinh Thái -->
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-[#102A0E] mb-4">Du lịch sinh thái (Placeholder)</h3>
+                    <div class="h-64 bg-gray-200 rounded-lg mb-4"></div>
+                    <p class="text-gray-600 leading-relaxed">Đây là nội dung placeholder cho Du lịch sinh thái. Bạn có thể thay thế bằng bài viết chi tiết về Đồi chè, Hồ Núi Cốc, hoặc các khu sinh thái khác ở Đại Từ. (Nội dung này giúp trang web đủ dài để cuộn).</p>
+                    <div class="h-20 bg-gray-100 mt-4 rounded"></div>
+                </div>
+                <!-- Mục Văn Hoá -->
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-[#102A0E] mb-4">Du lịch văn hoá (Placeholder)</h3>
+                    <div class="h-64 bg-gray-200 rounded-lg mb-4"></div>
+                    <p class="text-gray-600 leading-relaxed">Đây là nội dung placeholder cho Du lịch văn hoá. Bạn có thể thay thế bằng thông tin về Khu Di tích ATK Định Hóa, các lễ hội truyền thống, hoặc các điểm lịch sử khác. (Nội dung này giúp trang web đủ dài để cuộn).</p>
+                    <div class="h-20 bg-gray-100 mt-4 rounded"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHẦN BỔ SUNG: ẨM THỰC (Placeholder để tăng chiều dài trang) -->
+    <section class="py-16 sm:py-24" id="am-thuc">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#102A0E] mb-8 border-l-4 border-[#FFDE59] pl-4">
+                2. ẨM THỰC ĐẶC SẮC
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                 <!-- Đặc Sản -->
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-[#102A0E] mb-4">Đặc sản (Placeholder)</h3>
+                    <div class="h-48 bg-gray-200 rounded-lg mb-4"></div>
+                    <p class="text-gray-600">Nội dung placeholder cho Đặc sản địa phương (ví dụ: Chè Tân Cương, Bánh chưng Bờ Đậu). (Nội dung này giúp trang web đủ dài để cuộn).</p>
+                </div>
+                <!-- Món Ăn Nổi Bật -->
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-[#102A0E] mb-4">Món ăn nổi bật (Placeholder)</h3>
+                    <div class="h-48 bg-gray-200 rounded-lg mb-4"></div>
+                    <p class="text-gray-600">Nội dung placeholder cho các món ăn nổi bật tại Đại Từ. (Nội dung này giúp trang web đủ dài để cuộn).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- PHẦN BỔ SUNG: LƯU TRÚ (Placeholder để tăng chiều dài trang) -->
+    <section class="py-16 sm:py-24 bg-gray-50" id="luu-tru">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#102A0E] mb-8 border-l-4 border-[#FFDE59] pl-4">
+                3. LƯU TRÚ VÀ NGHỈ DƯỠNG
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                 <!-- Homestay -->
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-[#102A0E] mb-4">Homestay (Placeholder)</h3>
+                    <div class="h-48 bg-gray-200 rounded-lg mb-4"></div>
+                    <p class="text-gray-600">Nội dung placeholder cho các lựa chọn Homestay tại Đại Từ, mang lại trải nghiệm gần gũi với thiên nhiên. (Nội dung này giúp trang web đủ dài để cuộn).</p>
+                </div>
+                <!-- Lều - Camping -->
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-[#102A0E] mb-4">Lều - Camping (Placeholder)</h3>
+                    <div class="h-48 bg-gray-200 rounded-lg mb-4"></div>
+                    <p class="text-gray-600">Nội dung placeholder cho các khu vực cắm trại và thuê lều lý tưởng. (Nội dung này giúp trang web đủ dài để cuộn).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- PHẦN BỔ SUNG: HOẠT ĐỘNG (Placeholder để tăng chiều dài trang) -->
+    <section class="py-16 sm:py-24" id="hoat-dong">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#102A0E] mb-8 border-l-4 border-[#FFDE59] pl-4">
+                4. CÁC HOẠT ĐỘNG TRẢI NGHIỆM
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <!-- Bơi -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-md"><h4 class="font-bold text-[#102A0E]">Bơi</h4><div class="h-20 bg-gray-200 rounded-lg mt-2"></div></div>
+                <!-- Tham quan -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-md"><h4 class="font-bold text-[#102A0E]">Tham quan</h4><div class="h-20 bg-gray-200 rounded-lg mt-2"></div></div>
+                <!-- Cắm trại -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-md"><h4 class="font-bold text-[#102A0E]">Cắm trại</h4><div class="h-20 bg-gray-200 rounded-lg mt-2"></div></div>
+                <!-- Check in -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-md"><h4 class="font-bold text-[#102A0E]">Check in - chụp ảnh</h4><div class="h-20 bg-gray-200 rounded-lg mt-2"></div></div>
+                <!-- Vui chơi -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-md"><h4 class="font-bold text-[#102A0E]">Vui chơi</h4><div class="h-20 bg-gray-200 rounded-lg mt-2"></div></div>
+                <!-- Di chuyển -->
+                <div class="text-center p-4 bg-white rounded-xl shadow-md"><h4 class="font-bold text-[#102A0E]">Di chuyển</h4><div class="h-20 bg-gray-200 rounded-lg mt-2"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="lien-he" class="bg-[#102A0E] text-white py-10 sm:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <!-- Cột 1: Logo và Tóm tắt -->
+            <div>
+                <h3 class="font-extrabold text-xl tracking-wider mb-4">A4K72 JOURNEY WEB</h3>
+                <p class="text-sm text-gray-300">
+                    Khám phá vẻ đẹp tự nhiên, lịch sử và văn hóa độc đáo của Đại Từ, Thái Nguyên.
+                </p>
+            </div>
+
+            <!-- Cột 2: Thông tin Liên hệ -->
+            <div class="md:col-span-1">
+                <h3 class="font-bold text-lg mb-4 text-[#FFDE59]">LIÊN HỆ - HỖ TRỢ</h3>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li>Email: stem.a4k72.daitutravel@gmail.com</li>
+                    <li>Hotline: 0123 456 789</li>
+                    <li>Địa chỉ: Trung tâm huyện Đại Từ, tỉnh Thái Nguyên.</li>
+                    <li>Giờ hoạt động: 8h00 – 17h00 hàng ngày.</li>
+                </ul>
+            </div>
+
+            <!-- Cột 3: Menu nhanh -->
+            <div class="md:col-span-1">
+                <h3 class="font-bold text-lg mb-4 text-[#FFDE59]">MENU NHANH</h3>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li><a href="#home" class="hover:text-white transition duration-200">Trang chủ</a></li>
+                    <li><a href="#diem-du-lich" class="hover:text-white transition duration-200">Điểm du lịch</a></li>
+                    <li><a href="#am-thuc" class="hover:text-white transition duration-200">Ẩm thực</a></li>
+                    <li><a href="#luu-tru" class="hover:text-white transition duration-200">Lưu trú</a></li>
+                    <li><a href="#hoat-dong" class="hover:text-white transition duration-200">Hoạt động</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-gray-700 text-center">
+            <p class="text-xs text-gray-400">&copy; 2025 A4K72 Journey Web. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        // Các hàm xử lý giao diện
+        const menuToggle = document.getElementById('menu-toggle-desktop'); // Đã đổi ID để phù hợp với code mới
+        const fullMenu = document.getElementById('full-menu'); // Đã đổi ID cho menu full screen
+        
+        // Lấy hai phần tử icon đã được định nghĩa trong HTML
+        const iconMenu = document.getElementById('icon-menu-main');
+        const iconX = document.getElementById('icon-x-main');
+
+        // Toggle menu full screen (áp dụng cho mọi kích thước)
+        if (menuToggle && fullMenu && iconMenu && iconX) {
+            menuToggle.addEventListener('click', () => {
+                fullMenu.classList.toggle('hidden');
+                
+                // Thay đổi icon
+                iconMenu.classList.toggle('hidden');
+                iconX.classList.toggle('hidden');
+            });
+        }
+        
+        // Đóng menu full screen khi click vào link
+        document.querySelectorAll('#full-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                // Đảm bảo menu đóng
+                fullMenu.classList.add('hidden');
+                iconMenu.classList.remove('hidden');
+                iconX.classList.add('hidden');
+
+                // Xử lý cuộn mượt mà đến section
+                const targetId = link.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    // Trừ đi chiều cao navbar (16 * 4 = 64px)
+                    const offset = 64; 
+                    const bodyRect = document.body.getBoundingClientRect().top;
+                    const elementRect = targetElement.getBoundingClientRect().top;
+                    const elementPosition = elementRect - bodyRect;
+                    const offsetPosition = elementPosition - offset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
