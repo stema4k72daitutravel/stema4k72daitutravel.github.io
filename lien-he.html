@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A4K72 Journey Web - Liên Hệ</title>
+    <!-- Tải Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Liên kết đến file CSS chung -->
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- Tải Icon Lucide -->
+    <script type="module">
+        import { createIcons, Menu, X, ChevronDown, Mail, Phone, MapPin, Clock, Send } from 'https://cdn.jsdelivr.net/npm/lucide@latest/dist/esm/lucide.js';
+        window.addEventListener('load', () => {
+            createIcons({ icons: { Menu, X, ChevronDown, Mail, Phone, MapPin, Clock, Send } });
+        });
+    </script>
+    
+    <!-- Tải các font chữ yêu cầu -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Great+Vibes&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white">
+
+    <!-- PHẦN ĐẦU TRANG - THANH ĐIỀU HƯỚNG (Navbar) -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition duration-300 bg-primary shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Tên Trang -->
+                <a href="index.html" class="text-white font-extrabold text-sm sm:text-lg tracking-wider">
+                    A4K72 JOURNEY WEB
+                </a>
+
+                <!-- Menu Desktop -->
+                <nav class="hidden lg:flex space-x-2 h-full">
+                    <ul class="flex items-center space-x-1 h-full">
+                        <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+                        
+                        <!-- Dropdown: Điểm du lịch -->
+                        <li class="group relative flex items-center h-full">
+                            <a href="diem-du-lich.html" class="nav-link flex items-center">
+                                Điểm du lịch <i data-lucide="chevron-down" class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="diem-du-lich.html#sinh-thai" class="dropdown-item">Du lịch sinh thái</a>
+                                <a href="diem-du-lich.html#van-hoa" class="dropdown-item">Du lịch văn hoá</a>
+                            </div>
+                        </li>
+                        
+                        <!-- Dropdown: Ẩm thực -->
+                        <li class="group relative flex items-center h-full">
+                            <a href="am-thuc.html" class="nav-link flex items-center">
+                                Ẩm thực <i data-lucide="chevron-down" class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="am-thuc.html#dac-san" class="dropdown-item">Đặc sản</a>
+                                <a href="am-thuc.html#mon-noi-bat" class="dropdown-item">Món ăn nổi bật</a>
+                            </div>
+                        </li>
+                        
+                        <!-- Dropdown: Lưu trú -->
+                        <li class="group relative flex items-center h-full">
+                            <a href="luu-tru.html" class="nav-link flex items-center">
+                                Lưu trú <i data-lucide="chevron-down" class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="luu-tru.html#homestay" class="dropdown-item">Homestay</a>
+                                <a href="luu-tru.html#camping" class="dropdown-item">Lều - camping</a>
+                            </div>
+                        </li>
+                        
+                        <!-- Dropdown: Hoạt động -->
+                        <li class="group relative flex items-center h-full">
+                            <a href="hoat-dong.html" class="nav-link flex items-center">
+                                Hoạt động <i data-lucide="chevron-down" class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="hoat-dong.html#boi" class="dropdown-item">Bơi</a>
+                                <a href="hoat-dong.html#tham-quan" class="dropdown-item">Tham quan</a>
+                                <a href="hoat-dong.html#cam-trai" class="dropdown-item">Cắm trại</a>
+                                <a href="hoat-dong.html#check-in" class="dropdown-item">Check in - chụp ảnh</a>
+                                <a href="hoat-dong.html#vui-choi" class="dropdown-item">Vui chơi</a>
+                            </div>
+                        </li>
+                        
+                        <li><a href="di-chuyen.html" class="nav-link">Di chuyển</a></li>
+                        <li><a href="lien-he.html" class="nav-link active">Liên hệ</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Nút Menu cho Mobile -->
+                <button id="menu-toggle" class="lg:hidden text-white focus:outline-none p-2 rounded-lg">
+                    <i id="icon-menu" data-lucide="menu" class="w-7 h-7"></i>
+                    <i id="icon-x" data-lucide="x" class="w-7 h-7 hidden"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile (Full Screen) -->
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-16 left-0 w-full bg-primary transition-transform duration-300 shadow-xl">
+             <div class="px-2 pt-2 pb-4 space-y-1">
+                <a href="index.html" class="mobile-nav-link">Trang chủ</a>
+                
+                <!-- Mobile Dropdown: Điểm du lịch -->
+                <div class="mobile-dropdown-container">
+                    <div class="mobile-dropdown-header flex justify-between items-center bg-transparent hover:bg-white/5">
+                        Điểm du lịch <i data-lucide="chevron-down" class="w-4 h-4 ml-1 transition-transform"></i>
+                    </div>
+                    <div class="mobile-dropdown-content">
+                        <a href="diem-du-lich.html#sinh-thai" class="mobile-dropdown-item">Du lịch sinh thái</a>
+                        <a href="diem-du-lich.html#van-hoa" class="mobile-dropdown-item">Du lịch văn hoá</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Dropdown: Ẩm thực -->
+                <div class="mobile-dropdown-container">
+                    <div class="mobile-dropdown-header flex justify-between items-center bg-transparent hover:bg-white/5">
+                        Ẩm thực <i data-lucide="chevron-down" class="w-4 h-4 ml-1 transition-transform"></i>
+                    </div>
+                    <div class="mobile-dropdown-content">
+                        <a href="am-thuc.html#dac-san" class="mobile-dropdown-item">Đặc sản</a>
+                        <a href="am-thuc.html#mon-noi-bat" class="mobile-dropdown-item">Món ăn nổi bật</a>
+                    </div>
+                </div>
+                
+                 <!-- Mobile Dropdown: Lưu trú -->
+                <div class="mobile-dropdown-container">
+                    <div class="mobile-dropdown-header flex justify-between items-center bg-transparent hover:bg-white/5">
+                        Lưu trú <i data-lucide="chevron-down" class="w-4 h-4 ml-1 transition-transform"></i>
+                    </div>
+                    <div class="mobile-dropdown-content">
+                        <a href="luu-tru.html#homestay" class="mobile-dropdown-item">Homestay</a>
+                        <a href="luu-tru.html#camping" class="mobile-dropdown-item">Lều - camping</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Dropdown: Hoạt động -->
+                <div class="mobile-dropdown-container">
+                    <div class="mobile-dropdown-header flex justify-between items-center bg-transparent hover:bg-white/5">
+                        Hoạt động <i data-lucide="chevron-down" class="w-4 h-4 ml-1 transition-transform"></i>
+                    </div>
+                    <div class="mobile-dropdown-content">
+                        <a href="hoat-dong.html#boi" class="mobile-dropdown-item">Bơi</a>
+                        <a href="hoat-dong.html#tham-quan" class="mobile-dropdown-item">Tham quan</a>
+                        <a href="hoat-dong.html#cam-trai" class="mobile-dropdown-item">Cắm trại</a>
+                        <a href="hoat-dong.html#check-in" class="mobile-dropdown-item">Check in - chụp ảnh</a>
+                        <a href="hoat-dong.html#vui-choi" class="mobile-dropdown-item">Vui chơi</a>
+                    </div>
+                </div>
+                
+                <a href="di-chuyen.html" class="mobile-nav-link">Di chuyển</a>
+                <a href="lien-he.html" class="mobile-nav-link active">Liên hệ</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- PHẦN HEADER CHUNG -->
+    <section class="relative pt-16 flex items-center justify-center text-center overflow-hidden h-[30vh] md:h-[40vh]">
+        <!-- Ảnh Background giả lập đồi chè -->
+        <div class="absolute inset-0 bg-cover bg-center" 
+             style="background-image: url('https://placehold.co/1920x1080/102A0E/FFFFFF?text=Đồi+Chè+Đại+Từ'); filter: brightness(0.7);">
+        </div>
+        
+        <!-- Màu Overlay -->
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+
+        <!-- Nội dung chính giữa -->
+        <div class="relative z-10 p-4 max-w-4xl mx-auto">
+            <!-- Text 1: KHÁM PHÁ VẺ ĐẸP -->
+            <p class="text-xl sm:text-3xl font-merriweather font-extrabold text-accent mb-[-5px] sm:mb-[-10px]">
+                KHÁM PHÁ VẺ ĐẸP
+            </p>
+            
+            <!-- Text 2: Đại Từ -->
+            <h1 class="text-4xl sm:text-6xl font-luxutois text-white font-normal leading-none mb-4">
+                Đại Từ
+            </h1>
+            
+            <!-- Text 3: Slogan -->
+            <p class="text-xs sm:text-sm font-montserrat text-white font-medium tracking-widest uppercase">
+                THIÊN NHIÊN - LỊCH SỬ - VĂN HOÁ - TRẢI NGHIỆM
+            </p>
+        </div>
+    </section>
+    
+    <!-- PHẦN NỘI DUNG TRANG LIÊN HỆ -->
+    <section class="py-12 sm:py-16" id="main-content">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-primary mb-8 border-l-4 border-accent pl-4 flex items-center">
+                LIÊN HỆ - THÔNG TIN HỖ TRỢ & GÓP Ý
+            </h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Cột 1: Thông tin liên hệ -->
+                <div class="lg:col-span-1">
+                    <div class="bg-gray-50 p-6 sm:p-8 rounded-xl shadow-lg h-full">
+                        <h3 class="text-xl font-bold text-primary mb-6">Thông tin liên hệ chính</h3>
+                        <ul class="text-lg space-y-4">
+                            <li class="flex items-center">
+                                <i data-lucide="mail" class="w-6 h-6 mr-3 text-accent"></i>
+                                <span class="font-bold text-primary mr-2">Email:</span> stem.a4k72.daitutravel@gmail.com
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="phone" class="w-6 h-6 mr-3 text-accent"></i>
+                                <span class="font-bold text-primary mr-2">Hotline:</span> 0123 456 789
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="map-pin" class="w-6 h-6 mr-3 text-accent mt-1"></i>
+                                <span class="font-bold text-primary mr-2">Địa chỉ:</span> Trung tâm huyện Đại Từ, tỉnh Thái Nguyên.
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="clock" class="w-6 h-6 mr-3 text-accent"></i>
+                                <span class="font-bold text-primary mr-2">Giờ hoạt động:</span> 8h00 – 17h00 hàng ngày.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Cột 2: Form Góp ý -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg border-t-4 border-accent">
+                        <h3 class="text-2xl font-bold text-primary mb-6">Gửi góp ý và thắc mắc</h3>
+                        
+                        <form id="contact-form" class="space-y-4">
+                            <!-- Họ và Tên -->
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Họ và Tên</label>
+                                <input type="text" id="name" name="name" required
+                                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent">
+                            </div>
+
+                            <!-- Email -->
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" id="email" name="email" required
+                                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent">
+                            </div>
+
+                            <!-- Số điện thoại -->
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Số điện thoại</label>
+                                <input type="tel" id="phone" name="phone"
+                                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent">
+                            </div>
+
+                            <!-- Góp ý (Textarea) -->
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Nội dung góp ý / Thắc mắc</label>
+                                <textarea id="message" name="message" rows="5" required
+                                          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"></textarea>
+                            </div>
+
+                            <!-- Nút Submit -->
+                            <button type="submit" 
+                                    class="w-full flex items-center justify-center py-3 px-6 
+                                           bg-primary text-white font-bold rounded-lg 
+                                           hover:bg-accent hover:text-primary transition duration-300 shadow-md">
+                                GỬI GÓP Ý <i data-lucide="send" class="w-5 h-5 ml-2"></i>
+                            </button>
+                            <div id="form-message" class="mt-4 text-center text-sm font-medium hidden"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Placeholder cho Bản đồ -->
+            <div class="mt-12">
+                <h3 class="text-xl font-bold text-primary mb-4 border-b-2 border-primary pb-2">Vị trí của chúng tôi (Trung tâm Đại Từ)</h3>
+                <div class="h-64 bg-gray-200 rounded-xl flex items-center justify-center text-gray-500 border border-gray-300">
+                    [Placeholder cho Bản đồ Google Maps]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-primary text-white py-10 sm:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <!-- Cột 1: Logo và Tóm tắt -->
+            <div>
+                <h3 class="font-extrabold text-xl tracking-wider mb-4">A4K72 JOURNEY WEB</h3>
+                <p class="text-sm text-gray-300">Khám phá vẻ đẹp tự nhiên, lịch sử và văn hóa độc đáo của Đại Từ, Thái Nguyên.</p>
+            </div>
+
+            <!-- Cột 2: Thông tin Liên hệ -->
+            <div class="md:col-span-1">
+                <h3 class="font-bold text-lg mb-4 text-accent">LIÊN HỆ - HỖ TRỢ</h3>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li>Email: stem.a4k72.daitutravel@gmail.com</li>
+                    <li>Hotline: 0123 456 789</li>
+                    <li>Địa chỉ: Trung tâm huyện Đại Từ, tỉnh Thái Nguyên.</li>
+                    <li>Giờ hoạt động: 8h00 – 17h00 hàng ngày.</li>
+                </ul>
+            </div>
+
+            <!-- Cột 3: Menu nhanh -->
+            <div class="md:col-span-1">
+                <h3 class="font-bold text-lg mb-4 text-accent">MENU NHANH</h3>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li><a href="index.html" class="hover:text-white transition duration-200">Trang chủ</a></li>
+                    <li><a href="diem-du-lich.html" class="hover:text-white transition duration-200">Điểm du lịch</a></li>
+                    <li><a href="am-thuc.html" class="hover:text-white transition duration-200">Ẩm thực</a></li>
+                    <li><a href="luu-tru.html" class="hover:text-white transition duration-200">Lưu trú</a></li>
+                    <li><a href="hoat-dong.html" class="hover:text-white transition duration-200">Hoạt động</a></li>
+                    <li><a href="di-chuyen.html" class="hover:text-white transition duration-200">Di chuyển</a></li>
+                    <li><a href="lien-he.html" class="hover:text-white transition duration-200">Liên hệ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-gray-700 text-center">
+            <p class="text-xs text-gray-400">&copy; 2025 A4K72 Journey Web. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        // Hàm xử lý Mobile Menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconMenu = document.getElementById('icon-menu');
+        const iconX = document.getElementById('icon-x');
+        const form = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+
+        if (menuToggle && mobileMenu && iconMenu && iconX) {
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                iconMenu.classList.toggle('hidden');
+                iconX.classList.toggle('hidden');
+            });
+        }
+        
+        // Hàm xử lý Mobile Dropdown (Accordion)
+        document.querySelectorAll('.mobile-dropdown-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('i');
+
+                // Đóng tất cả các dropdown khác
+                document.querySelectorAll('.mobile-dropdown-content').forEach(otherContent => {
+                    const otherHeader = otherContent.previousElementSibling;
+                    const otherIcon = otherHeader ? otherHeader.querySelector('i') : null;
+
+                    if (otherContent !== content && otherContent.classList.contains('open')) {
+                        otherContent.classList.remove('open');
+                        if (otherIcon) {
+                            otherIcon.classList.remove('rotate-180');
+                        }
+                    }
+                });
+
+                // Mở/đóng dropdown hiện tại
+                if (content) {
+                    content.classList.toggle('open');
+                }
+                if (icon) {
+                    icon.classList.toggle('rotate-180');
+                }
+            });
+        });
+
+        // Xử lý cuộn mượt mà
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    const offset = 64; // Navbar height
+                    const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                    const offsetPosition = elementPosition - offset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+
+        // Xử lý Form Submit (Placeholder - Không gửi dữ liệu thực tế)
+        if (form && formMessage) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Giả lập gửi dữ liệu thành công
+                formMessage.textContent = 'Cảm ơn bạn đã gửi góp ý! Chúng tôi sẽ phản hồi trong thời gian sớm nhất.';
+                formMessage.classList.remove('hidden', 'text-red-600');
+                formMessage.classList.add('text-green-600');
+                
+                // Reset form sau khi gửi
+                form.reset();
+            });
+        }
+    </script>
+</body>
+</html>
