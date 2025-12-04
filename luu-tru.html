@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điểm Du Lịch - A4K72 Journey Web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module">
+        import { createIcons, Menu, X, ChevronDown, MapPin, Camera } from 'https://cdn.jsdelivr.net/npm/lucide@latest/dist/esm/lucide.js';
+        window.addEventListener('load', () => {
+            createIcons({ icons: { Menu, X, ChevronDown, MapPin, Camera } });
+        });
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Great+Vibes&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition duration-300 bg-primary shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="text-white font-extrabold text-sm sm:text-lg tracking-wider">
+                    A4K72 JOURNEY WEB
+                </a>
+                <nav class="hidden lg:flex space-x-2 h-full">
+                    <ul class="flex items-center space-x-1 h-full">
+                        <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+                        <li class="group relative flex items-center h-full">
+                            <a href="diem-du-lich.html" class="nav-link active flex items-center">
+                                Điểm du lịch <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="diem-du-lich.html#sinh-thai" class="dropdown-item">Du lịch sinh thái</a>
+                                <a href="diem-du-lich.html#van-hoa" class="dropdown-item">Du lịch văn hoá</a>
+                            </div>
+                        </li>
+                        <li class="group relative flex items-center h-full">
+                            <a href="am-thuc.html" class="nav-link flex items-center">
+                                Ẩm thực <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="am-thuc.html#dac-san" class="dropdown-item">Đặc sản</a>
+                                <a href="am-thuc.html#mon-noi-bat" class="dropdown-item">Món ăn nổi bật</a>
+                            </div>
+                        </li>
+                        <li class="group relative flex items-center h-full">
+                            <a href="luu-tru.html" class="nav-link flex items-center">
+                                Lưu trú <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="luu-tru.html#homestay" class="dropdown-item">Homestay</a>
+                                <a href="luu-tru.html#camping" class="dropdown-item">Lều - camping</a>
+                            </div>
+                        </li>
+                        <li class="group relative flex items-center h-full">
+                            <a href="hoat-dong.html" class="nav-link flex items-center">
+                                Hoạt động <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="hoat-dong.html#boi" class="dropdown-item">Bơi</a>
+                                <a href="hoat-dong.html#tham-quan" class="dropdown-item">Tham quan</a>
+                                <a href="hoat-dong.html#cam-trai" class="dropdown-item">Cắm trại</a>
+                                <a href="hoat-dong.html#check-in" class="dropdown-item">Check in - chụp ảnh</a>
+                                <a href="hoat-dong.html#vui-choi" class="dropdown-item">Vui chơi</a>
+                            </div>
+                        </li>
+                        <li><a href="di-chuyen.html" class="nav-link">Di chuyển</a></li>
+                        <li><a href="lien-he.html" class="nav-link">Liên hệ</a></li>
+                    </ul>
+                </nav>
+                <button id="menu-toggle" class="lg:hidden text-white focus:outline-none p-2 rounded-lg">
+                    <i id="icon-menu" data-lucide="menu" class="w-7 h-7"></i>
+                    <i id="icon-x" data-lucide="x" class="w-7 h-7 hidden"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-16 left-0 w-full bg-primary transition-transform duration-300 shadow-xl">
+             <div class="p-4 text-white text-center">Vui lòng copy Menu Mobile từ file index.html</div>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 py-10">
+        <h1 class="text-4xl font-merriweather font-bold text-primary text-center mb-10">Lưu Trú Tại Đại Từ</h1>
+        
+        <section id="homestay" class="mb-16">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <span class="bg-accent w-2 h-8 mr-3 block rounded-sm"></span> Homestay Gần Gũi Thiên Nhiên
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow p-4 flex flex-col">
+                    <img src="https://placehold.co/600x350?text=Homestay+Cua+Tu" class="rounded mb-4 w-full h-64 object-cover">
+                    <h3 class="text-xl font-bold text-primary">Cửa Tử Homestay</h3>
+                    <p class="text-gray-600 text-sm mt-2 flex-grow">Nằm ngay chân suối Cửa Tử. Không gian nhà sàn truyền thống, phục vụ ăn uống và dẫn tour trekking.</p>
+                    <div class="mt-4 pt-4 border-t flex justify-between items-center">
+                        <span class="text-green-600 font-bold">Từ 300.000đ/đêm</span>
+                        <a href="#" class="px-4 py-2 bg-primary text-white rounded hover:bg-green-900">Liên hệ</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4 flex flex-col">
+                    <img src="https://placehold.co/600x350?text=La+Bang+Homestay" class="rounded mb-4 w-full h-64 object-cover">
+                    <h3 class="text-xl font-bold text-primary">La Bằng Xanh Homestay</h3>
+                    <p class="text-gray-600 text-sm mt-2 flex-grow">View đồi chè bát ngát, thích hợp cho gia đình nghỉ dưỡng và trải nghiệm hái chè.</p>
+                    <div class="mt-4 pt-4 border-t flex justify-between items-center">
+                        <span class="text-green-600 font-bold">Từ 450.000đ/đêm</span>
+                        <a href="#" class="px-4 py-2 bg-primary text-white rounded hover:bg-green-900">Liên hệ</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="camping">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <span class="bg-accent w-2 h-8 mr-3 block rounded-sm"></span> Lều & Camping (Cắm Trại)
+            </h2>
+            <div class="bg-primary rounded-xl overflow-hidden shadow-2xl relative text-white">
+                <div class="md:flex">
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/800x600?text=Camping+Lake" class="h-full w-full object-cover">
+                    </div>
+                    <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                        <h3 class="text-3xl font-bold text-accent mb-4">Cắm Trại Hồ Ghềnh Chè</h3>
+                        <p class="mb-6 text-gray-300">Dịch vụ cho thuê lều trại trọn gói bao gồm: Lều mông cổ, bếp nướng BBQ, than củi, thuyền SUP.</p>
+                        <ul class="space-y-2 mb-8">
+                            <li class="flex items-center"><i data-lucide="check" class="mr-2 text-accent"></i> Đầy đủ tiện nghi điện nước</li>
+                            <li class="flex items-center"><i data-lucide="check" class="mr-2 text-accent"></i> An ninh đảm bảo</li>
+                            <li class="flex items-center"><i data-lucide="check" class="mr-2 text-accent"></i> View hồ cực chill</li>
+                        </ul>
+                        <button class="bg-accent text-primary font-bold py-3 px-8 rounded-full hover:bg-white transition w-fit">Đặt Chỗ Ngay</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+    <footer id="footer" class="bg-primary text-white py-10 sm:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <!-- Cột 1: Logo và Tóm tắt -->
+            <div>
+                <h3 class="font-extrabold text-xl tracking-wider mb-4">A4K72 JOURNEY WEB</h3>
+                <p class="text-sm text-gray-300">
+                    Khám phá vẻ đẹp tự nhiên, lịch sử và văn hóa độc đáo của Đại Từ, Thái Nguyên.
+                </p>
+            </div>
+
+            <!-- Cột 2: Thông tin Liên hệ -->
+            <div class="md:col-span-1">
+                <h3 class="font-bold text-lg mb-4 text-accent">LIÊN HỆ - HỖ TRỢ</h3>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li>Email: stem.a4k72.daitutravel@gmail.com</li>
+                    <li>Hotline: 0123 456 789</li>
+                    <li>Địa chỉ: Trung tâm huyện Đại Từ, tỉnh Thái Nguyên.</li>
+                    <li>Giờ hoạt động: 8h00 – 17h00 hàng ngày.</li>
+                </ul>
+            </div>
+
+            <!-- Cột 3: Menu nhanh -->
+            <div class="md:col-span-1">
+                <h3 class="font-bold text-lg mb-4 text-accent">MENU NHANH</h3>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li><a href="index.html" class="hover:text-white transition duration-200">Trang chủ</a></li>
+                    <li><a href="diem-du-lich.html" class="hover:text-white transition duration-200">Điểm du lịch</a></li>
+                    <li><a href="am-thuc.html" class="hover:text-white transition duration-200">Ẩm thực</a></li>
+                    <li><a href="luu-tru.html" class="hover:text-white transition duration-200">Lưu trú</a></li>
+                    <li><a href="hoat-dong.html" class="hover:text-white transition duration-200">Hoạt động</a></li>
+                    <li><a href="di-chuyen.html" class="hover:text-white transition duration-200">Di chuyển</a></li>
+                    <li><a href="lien-he.html" class="hover:text-white transition duration-200">Liên hệ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-gray-700 text-center">
+            <p class="text-xs text-gray-400">&copy; 2025 A4K72 Journey Web. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Copy đoạn script JS từ index.html vào đây
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconMenu = document.getElementById('icon-menu');
+        const iconX = document.getElementById('icon-x');
+
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                iconMenu.classList.toggle('hidden');
+                iconX.classList.toggle('hidden');
+            });
+        }
+        
+        document.querySelectorAll('.mobile-dropdown-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                content.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>
