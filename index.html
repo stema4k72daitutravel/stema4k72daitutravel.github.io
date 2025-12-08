@@ -18,6 +18,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Great+Vibes&family=Merriweather:wght@700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+    <style>
+        /* CSS bổ sung để đảm bảo hiển thị đẹp nếu file CSS ngoài chưa load kịp */
+        .font-luxutois { font-family: 'Great Vibes', cursive; }
+        .font-merriweather { font-family: 'Merriweather', serif; }
+        body { font-family: 'Montserrat', sans-serif; color: #1f2937; scroll-behavior: smooth; }
+        .bg-primary { background-color: #102A0E; }
+        .text-accent { color: #FFDE59; }
+        .border-accent { border-color: #FFDE59; }
+        
+        /* Dropdown & Navbar styles */
+        .nav-link { color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 600; padding: 0 10px; transition: color 0.3s; border-bottom: 3px solid transparent; }
+        .nav-link:hover, .nav-link.active { color: #FFDE59; border-bottom-color: #FFDE59; }
+        
+        .dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background-color: #102A0E; min-width: 180px; z-index: 100; padding: 5px 0; border-radius: 0 0 8px 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); opacity: 0; visibility: hidden; transition: all 0.3s ease-out; }
+        .group:hover .dropdown-menu { opacity: 1; visibility: visible; }
+        .dropdown-item { display: block; padding: 10px 20px; color: #FFFFFF; font-size: 14px; text-decoration: none; }
+        .dropdown-item:hover { background-color: rgba(255, 222, 89, 0.1); color: #FFDE59; }
+        
+        /* Mobile styles */
+        .mobile-dropdown-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out; }
+        .mobile-dropdown-content.open { max-height: 500px; }
+    </style>
 </head>
 <body class="bg-white">
 
@@ -189,7 +211,7 @@
         </div>
     </section>
     
-    <!-- Phần Nội dung giới thiệu (Dựa trên ảnh 1.png) -->
+    <!-- Phần Nội dung giới thiệu -->
     <section class="py-16 sm:py-24" id="intro">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Tiêu đề chính -->
@@ -202,38 +224,41 @@
                 </p>
             </div>
 
-            <!-- Gallery ảnh 4 cột -->
+            <!-- Gallery ảnh 4 cột - ĐÃ CẬP NHẬT -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Card 1 -->
+                <!-- Card 1: Đồi chè Cầu Đá -->
                 <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                    <img src="https://placehold.co/600x400/102A0E/FFFFFF?text=Thác+nước" alt="Thác nước Đại Từ" class="w-full h-48 object-cover">
+                    <img src="https://placehold.co/600x400/102A0E/FFFFFF?text=Doi+Che" alt="Đồi chè Cầu Đá" class="w-full h-48 object-cover">
                     <div class="p-4 bg-gray-50">
-                        <h3 class="font-semibold text-lg text-primary mb-1">Thác Khuôn Tát</h3>
-                        <p class="text-sm text-gray-500">Du lịch sinh thái</p>
+                        <h3 class="font-semibold text-lg text-primary mb-1">Đồi chè Cầu Đá</h3>
+                        <p class="text-sm text-gray-500">Tham quan & Check-in</p>
                     </div>
                 </div>
-                <!-- Card 2 -->
+
+                <!-- Card 2: Khu di tích 27/7 -->
                 <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                    <img src="https://placehold.co/600x400/102A0E/FFFFFF?text=Tượng+đài" alt="Tượng đài" class="w-full h-48 object-cover">
+                    <img src="https://placehold.co/600x400/102A0E/FFFFFF?text=Di+Tich+27/7" alt="Khu di tích 27/7" class="w-full h-48 object-cover">
                     <div class="p-4 bg-gray-50">
-                        <h3 class="font-semibold text-lg text-primary mb-1">Tượng đài Chiến thắng</h3>
+                        <h3 class="font-semibold text-lg text-primary mb-1">Khu di tích 27/7</h3>
                         <p class="text-sm text-gray-500">Di tích lịch sử</p>
                     </div>
                 </div>
-                <!-- Card 3 -->
+
+                <!-- Card 3: Suối Kẹm La Bằng -->
                 <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                    <img src="https://placehold.co/600x400/102A0E/FFFFFF?text=Cổng+Di+tích" alt="Cổng di tích" class="w-full h-48 object-cover">
+                    <img src="https://placehold.co/600x400/102A0E/FFFFFF?text=Suoi+Kem" alt="Suối Kẹm La Bằng" class="w-full h-48 object-cover">
                     <div class="p-4 bg-gray-50">
-                        <h3 class="font-semibold text-lg text-primary mb-1">Khu Di tích ATK</h3>
-                        <p class="text-sm text-gray-500">Du lịch văn hoá</p>
+                        <h3 class="font-semibold text-lg text-primary mb-1">Suối Kẹm La Bằng</h3>
+                        <p class="text-sm text-gray-500">Du lịch sinh thái</p>
                     </div>
                 </div>
-                <!-- Card 4 -->
+
+                <!-- Card 4: Suối Cửa Tử -->
                 <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                    <img src="https://placehold.co/600x400/102A0E/FFFFFF?text=Suối+nước" alt="Suối nước" class="w-full h-48 object-cover">
+                    <img src="https://placehold.co/600x400/102A0E/FFFFFF?text=Cua+Tu" alt="Suối Cửa Tử" class="w-full h-48 object-cover">
                     <div class="p-4 bg-gray-50">
-                        <h3 class="font-semibold text-lg text-primary mb-1">Suối Kẹm</h3>
-                        <p class="text-sm text-gray-500">Hoạt động bơi lội</p>
+                        <h3 class="font-semibold text-lg text-primary mb-1">Suối Cửa Tử</h3>
+                        <p class="text-sm text-gray-500">Trekking & Trải nghiệm</p>
                     </div>
                 </div>
             </div>
