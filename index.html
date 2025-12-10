@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A4K72 Journey Web - Trang Chủ</title>
+    <title>A4K72 Journey Web</title>
     <!-- Tải Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Tải Icon Lucide -->
@@ -18,28 +18,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Great+Vibes&family=Merriweather:wght@700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
-    <style>
-        /* CSS bổ sung để đảm bảo hiển thị đẹp nếu file CSS ngoài chưa load kịp */
-        .font-luxutois { font-family: 'Great Vibes', cursive; }
-        .font-merriweather { font-family: 'Merriweather', serif; }
-        body { font-family: 'Montserrat', sans-serif; color: #1f2937; scroll-behavior: smooth; }
-        .bg-primary { background-color: #102A0E; }
-        .text-accent { color: #FFDE59; }
-        .border-accent { border-color: #FFDE59; }
-        
-        /* Dropdown & Navbar styles */
-        .nav-link { color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 600; padding: 0 10px; transition: color 0.3s; border-bottom: 3px solid transparent; }
-        .nav-link:hover, .nav-link.active { color: #FFDE59; border-bottom-color: #FFDE59; }
-        
-        .dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background-color: #102A0E; min-width: 180px; z-index: 100; padding: 5px 0; border-radius: 0 0 8px 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); opacity: 0; visibility: hidden; transition: all 0.3s ease-out; }
-        .group:hover .dropdown-menu { opacity: 1; visibility: visible; }
-        .dropdown-item { display: block; padding: 10px 20px; color: #FFFFFF; font-size: 14px; text-decoration: none; }
-        .dropdown-item:hover { background-color: rgba(255, 222, 89, 0.1); color: #FFDE59; }
-        
-        /* Mobile styles */
-        .mobile-dropdown-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out; }
-        .mobile-dropdown-content.open { max-height: 500px; }
-    </style>
 </head>
 <body class="bg-white">
 
@@ -224,11 +202,11 @@
                 </p>
             </div>
 
-            <!-- Gallery ảnh 4 cột - ĐÃ CẬP NHẬT -->
+            <!-- Gallery ảnh 4 cột - ĐÃ CẬP NHẬT ẢNH -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Card 1: Đồi chè Cầu Đá -->
                 <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                    <img src="https://placehold.co/600x400/102A0E/FFFFFF?text=Doi+Che" alt="Đồi chè Cầu Đá" class="w-full h-48 object-cover">
+                    <img src="images/trang-chu/IMG_trangchu_doichecauda.jpg" alt="Đồi chè Cầu Đá" class="w-full h-48 object-cover">
                     <div class="p-4 bg-gray-50">
                         <h3 class="font-semibold text-lg text-primary mb-1">Đồi chè Cầu Đá</h3>
                         <p class="text-sm text-gray-500">Tham quan & Check-in</p>
@@ -237,7 +215,7 @@
 
                 <!-- Card 2: Khu di tích 27/7 -->
                 <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                    <img src="https://placehold.co/600x400/102A0E/FFFFFF?text=Di+Tich+27/7" alt="Khu di tích 27/7" class="w-full h-48 object-cover">
+                    <img src="images/trang-chu/IMG_trangchu_27_7.png" alt="Khu di tích 27/7" class="w-full h-48 object-cover">
                     <div class="p-4 bg-gray-50">
                         <h3 class="font-semibold text-lg text-primary mb-1">Khu di tích 27/7</h3>
                         <p class="text-sm text-gray-500">Di tích lịch sử</p>
@@ -246,7 +224,7 @@
 
                 <!-- Card 3: Suối Kẹm La Bằng -->
                 <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                    <img src="https://placehold.co/600x400/102A0E/FFFFFF?text=Suoi+Kem" alt="Suối Kẹm La Bằng" class="w-full h-48 object-cover">
+                    <img src="images/trang-chu/IMG_trangchu_suoikem.jpg" alt="Suối Kẹm La Bằng" class="w-full h-48 object-cover">
                     <div class="p-4 bg-gray-50">
                         <h3 class="font-semibold text-lg text-primary mb-1">Suối Kẹm La Bằng</h3>
                         <p class="text-sm text-gray-500">Du lịch sinh thái</p>
@@ -254,8 +232,9 @@
                 </div>
 
                 <!-- Card 4: Suối Cửa Tử -->
+                <!-- Chưa có ảnh tải lên, sử dụng ảnh minh họa thiên nhiên -->
                 <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                    <img src="https://placehold.co/600x400/102A0E/FFFFFF?text=Cua+Tu" alt="Suối Cửa Tử" class="w-full h-48 object-cover">
+                    <img src="images/trang-chu/cuatu03.webp" alt="Suối Cửa Tử" class="w-full h-48 object-cover">
                     <div class="p-4 bg-gray-50">
                         <h3 class="font-semibold text-lg text-primary mb-1">Suối Cửa Tử</h3>
                         <p class="text-sm text-gray-500">Trekking & Trải nghiệm</p>

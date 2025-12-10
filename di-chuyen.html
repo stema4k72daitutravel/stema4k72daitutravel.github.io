@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Điểm Du Lịch - A4K72 Journey Web</title>
+    <title>Di Chuyển - A4K72 Journey Web</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module">
         import { createIcons, Menu, X, ChevronDown, MapPin, Camera } from 'https://cdn.jsdelivr.net/npm/lucide@latest/dist/esm/lucide.js';
@@ -133,11 +133,50 @@
     </header>
 
     <main class="flex-grow pt-16 bg-white">
+
+    <div class="relative h-[40vh] sm:h-[50vh] flex items-center justify-center">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://cdn.media.dulich24.com.vn/bai-viet/du-lich-moc-chau-trai-nghiem-nhung-dieu-thu-vi-46020241/du-lich-moc-chau-trai-nghiem-nhung-dieu-thu-vi.jpg'); filter: brightness(0.6);"></div>
+            <div class="relative z-10 text-center px-4">
+                <h1 class="text-4xl sm:text-6xl font-merriweather text-white font-bold mb-4 drop-shadow-lg">Hướng Dẫn Di Chuyển</h1>
+                <p class="text-accent text-lg font-montserrat tracking-wider uppercase">Các lộ trình đến Đại Từ</p>
+            </div>
+        </div>
+
     <div class="max-w-4xl mx-auto px-4 py-12">
-        <h1 class="text-3xl sm:text-4xl font-bold text-primary text-center mb-8">Hướng Dẫn Di Chuyển</h1>
+        <!-- <h1 class="text-3xl sm:text-4xl font-bold text-primary text-center mb-8">Hướng Dẫn Di Chuyển</h1> -->
         
         <div class="w-full h-64 sm:h-96 bg-gray-200 rounded-xl overflow-hidden shadow-inner mb-10 flex items-center justify-center">
-            <p class="text-gray-500 font-semibold">Bản đồ Google Maps (Embed here)</p>
+            <div class="mapouter">
+   <div class="gmap_canvas">
+      <iframe
+         class="gmap_iframe"
+         width="100%"
+         frameborder="0"
+         scrolling="no"
+         marginheight="0"
+         marginwidth="0"
+         src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Huyện Đại Từ, Thái Nguyên, Việt Nam&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+      ></iframe
+      ><a href="https://embed-googlemap.com">embed google maps in website</a>
+   </div>
+   <style>
+      .mapouter {
+         position: relative;
+         text-align: right;
+         width: 100%;
+         height: 400px;
+      }
+      .gmap_canvas {
+         overflow: hidden;
+         background: none !important;
+         width: 100%;
+         height: 400px;
+      }
+      .gmap_iframe {
+         height: 400px !important;
+      }
+   </style>
+</div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">

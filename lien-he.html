@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A4K72 Journey Web - Liên Hệ</title>
+    <title>Liên Hệ - A4K72 Journey Web</title>
     <!-- Tải Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Liên kết đến file CSS chung -->
@@ -154,33 +154,33 @@
     </header>
 
     <!-- PHẦN HEADER CHUNG -->
-    <section class="relative pt-16 flex items-center justify-center text-center overflow-hidden h-[30vh] md:h-[40vh]">
-        <!-- Ảnh Background giả lập đồi chè -->
-        <div class="absolute inset-0 bg-cover bg-center" 
-             style="background-image: url('https://placehold.co/1920x1080/102A0E/FFFFFF?text=Đồi+Chè+Đại+Từ'); filter: brightness(0.7);">
-        </div>
+    <!-- <section class="relative pt-16 flex items-center justify-center text-center overflow-hidden h-[30vh] md:h-[40vh]">
         
-        <!-- Màu Overlay -->
-        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://cdn.media.dulich24.com.vn/bai-viet/du-lich-moc-chau-trai-nghiem-nhung-dieu-thu-vi-46020241/du-lich-moc-chau-trai-nghiem-nhung-dieu-thu-vi.jpg'); filter: brightness(0.6);"></div>
 
-        <!-- Nội dung chính giữa -->
         <div class="relative z-10 p-4 max-w-4xl mx-auto">
-            <!-- Text 1: KHÁM PHÁ VẺ ĐẸP -->
             <p class="text-xl sm:text-3xl font-merriweather font-extrabold text-accent mb-[-5px] sm:mb-[-10px]">
                 KHÁM PHÁ VẺ ĐẸP
             </p>
             
-            <!-- Text 2: Đại Từ -->
             <h1 class="text-4xl sm:text-6xl font-luxutois text-white font-normal leading-none mb-4">
                 Đại Từ
             </h1>
             
-            <!-- Text 3: Slogan -->
             <p class="text-xs sm:text-sm font-montserrat text-white font-medium tracking-widest uppercase">
                 THIÊN NHIÊN - LỊCH SỬ - VĂN HOÁ - TRẢI NGHIỆM
             </p>
         </div>
-    </section>
+    </section> -->
+
+    <!-- hero section -->
+        <div class="relative h-[40vh] sm:h-[50vh] flex items-center justify-center">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://cdn.media.dulich24.com.vn/bai-viet/du-lich-moc-chau-trai-nghiem-nhung-dieu-thu-vi-46020241/du-lich-moc-chau-trai-nghiem-nhung-dieu-thu-vi.jpg'); filter: brightness(0.6);"></div>
+            <div class="relative z-10 text-center px-4">
+                <h1 class="text-4xl sm:text-6xl font-merriweather text-white font-bold mb-4 drop-shadow-lg">Bạn cảm thấy hứng thú với Đại Từ?</h1>
+                <p class="text-accent text-lg font-montserrat tracking-wider uppercase">Liên hệ với chúng tôi ngay dưới đây</p>
+            </div>
+        </div>
     
     <!-- PHẦN NỘI DUNG TRANG LIÊN HỆ -->
     <section class="py-12 sm:py-16" id="main-content">
@@ -267,11 +267,20 @@
 
             <!-- Placeholder cho Bản đồ -->
             <div class="mt-12">
-                <h3 class="text-xl font-bold text-primary mb-4 border-b-2 border-primary pb-2">Vị trí của chúng tôi (Trung tâm Đại Từ)</h3>
-                <div class="h-64 bg-gray-200 rounded-xl flex items-center justify-center text-gray-500 border border-gray-300">
-                    [Placeholder cho Bản đồ Google Maps]
-                </div>
-            </div>
+        <h3 class="text-xl font-bold text-primary mb-4 border-b-2 border-primary pb-2">Vị trí của chúng tôi (Trung tâm Đại Từ)</h3>
+        
+        <div class="h-64 w-full bg-gray-200 rounded-xl border border-gray-300 overflow-hidden relative">
+        <iframe
+            class="w-full h-full absolute top-0 left-0"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+            title="Bản đồ trung tâm Đại Từ"
+            src="https://maps.google.com/maps?q=Đại+Từ,+Thái+Nguyên,+Việt+Nam&t=&z=14&ie=UTF8&iwloc=&output=embed"
+        ></iframe>
+    </div>
+</div>
         </div>
     </section>
 
