@@ -97,3 +97,40 @@ body {
 .mobile-dropdown-content.open {
     max-height: 500px; /* Giá trị lớn để chứa nội dung */
 }
+
+
+/* Google Maps classes */
+/* CSS tuỳ chỉnh thêm cho bản đồ để đảm bảo responsive */
+.map-responsive-container iframe {
+    width: 100% !important;
+    height: 400px !important;
+}
+.mapouter, .gmap_canvas {
+    width: 100% !important;
+    max-width: 600px;
+}
+
+/* Modal */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+    animation: fadeInUp 0.3s ease-out forwards;
+}
+
+/* Tùy chỉnh thanh cuộn cho Modal (Scrollbar đẹp hơn) */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
