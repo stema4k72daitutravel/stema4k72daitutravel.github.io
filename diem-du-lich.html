@@ -14,7 +14,7 @@
     <!-- Link đến file CSS ngoài -->
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
 </head>
-<body class="bg-gray-50 flex flex-col min-h-screen font-montserrat">
+<body class="bg-gray-50 flex flex-col min-h-screen font-montserrat relative">
 
     <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition duration-300 bg-primary shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -163,7 +163,10 @@
                         <li class="flex items-center text-gray-700"><i data-lucide="map-pin" class="w-4 h-4 text-accent mr-2"></i> Xã Tân Thái, Đại Từ</li>
                         <li class="flex items-center text-gray-700"><i data-lucide="camera" class="w-4 h-4 text-accent mr-2"></i> Tham quan, Vui chơi, Nghỉ dưỡng</li>
                     </ul>
-                    <a href="#" class="inline-block px-6 py-2 bg-primary text-white rounded-full hover:bg-green-900 transition">Xem bản đồ</a>
+                    <!-- Cập nhật nút xem bản đồ -->
+                    <button type="button" data-map-src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Công Viên Nước Hồ Núi Cốc&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" class="btn-view-map inline-block px-6 py-2 bg-primary text-white rounded-full hover:bg-green-900 transition cursor-pointer">
+                        Xem bản đồ
+                    </button>
                 </div>
             </div>
 
@@ -179,7 +182,10 @@
                         <li class="flex items-center text-gray-700"><i data-lucide="map-pin" class="w-4 h-4 text-accent mr-2"></i> Xã Hoàng Nông, Đại Từ</li>
                         <li class="flex items-center text-gray-700"><i data-lucide="camera" class="w-4 h-4 text-accent mr-2"></i> Trekking, Tắm suối</li>
                     </ul>
-                    <a href="#" class="inline-block px-6 py-2 bg-primary text-white rounded-full hover:bg-green-900 transition">Xem bản đồ</a>
+                    <!-- Cập nhật nút xem bản đồ -->
+                    <button type="button" data-map-src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Suối Cửa Tử&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" class="btn-view-map inline-block px-6 py-2 bg-primary text-white rounded-full hover:bg-green-900 transition cursor-pointer">
+                        Xem bản đồ
+                    </button>
                 </div>
             </div>
 
@@ -195,23 +201,29 @@
                         <li class="flex items-center text-gray-700"><i data-lucide="map-pin" class="w-4 h-4 text-accent mr-2"></i> Xã La Bằng, Đại Từ</li>
                         <li class="flex items-center text-gray-700"><i data-lucide="camera" class="w-4 h-4 text-accent mr-2"></i> Picnic, Tắm mát</li>
                     </ul>
-                    <a href="#" class="inline-block px-6 py-2 bg-primary text-white rounded-full hover:bg-green-900 transition">Xem bản đồ</a>
+                    <!-- Cập nhật nút xem bản đồ -->
+                    <button type="button" data-map-src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Suối Kẹm&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" class="btn-view-map inline-block px-6 py-2 bg-primary text-white rounded-full hover:bg-green-900 transition cursor-pointer">
+                        Xem bản đồ
+                    </button>
                 </div>
             </div>
 
             <!-- Item 4: Thác Đá Xổng (Đảo chiều) -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center flex-row-reverse">
                 <div class="md:order-2 overflow-hidden rounded-xl shadow-lg h-64 md:h-80">
-                    <img src="images/diem-du-lich/DaXong.webp" alt="Thác Đá Xổng" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    <img src="images/diem-du-lich/DaCong.webp" alt="Thác Đá Cổng" class="w-full h-full object-cover transition duration-500 hover:scale-110">
                 </div>
                 <div class="md:order-1">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Thác Đá Xổng</h3>
-                    <p class="text-gray-600 mb-4 text-justify">Một vẻ đẹp ẩn mình giữa đại ngàn. Thác Đá Xổng mang vẻ đẹp hùng vĩ với dòng nước đổ xuống từ trên cao, tạo nên khung cảnh tráng lệ và âm thanh núi rừng sống động.</p>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Thác Đá Cổng</h3>
+                    <p class="text-gray-600 mb-4 text-justify">Một vẻ đẹp ẩn mình giữa đại ngàn. Thác Đá Cổng mang vẻ đẹp hùng vĩ với dòng nước đổ xuống từ trên cao, tạo nên khung cảnh tráng lệ và âm thanh núi rừng sống động.</p>
                     <ul class="space-y-2 mb-6">
-                        <li class="flex items-center text-gray-700"><i data-lucide="map-pin" class="w-4 h-4 text-accent mr-2"></i> Xã Bản Ngoại, Đại Từ</li>
+                        <li class="flex items-center text-gray-700"><i data-lucide="map-pin" class="w-4 h-4 text-accent mr-2"></i> Xã Quân Chu, Đại Từ</li>
                         <li class="flex items-center text-gray-700"><i data-lucide="camera" class="w-4 h-4 text-accent mr-2"></i> Khám phá, Chụp ảnh</li>
                     </ul>
-                    <a href="#" class="inline-block px-6 py-2 bg-primary text-white rounded-full hover:bg-green-900 transition">Xem bản đồ</a>
+                    <!-- Cập nhật nút xem bản đồ -->
+                    <button type="button" data-map-src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Thác Đá Cổng&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" class="btn-view-map inline-block px-6 py-2 bg-primary text-white rounded-full hover:bg-green-900 transition cursor-pointer">
+                        Xem bản đồ
+                    </button>
                 </div>
             </div>
         </section>
@@ -310,6 +322,29 @@
         </div>
     </footer>
 
+    <!-- MAP MODAL AREA -->
+    <div id="map-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+        <!-- Backdrop with Blur -->
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" onclick="closeMap()"></div>
+        
+        <!-- Modal Content -->
+        <div class="relative bg-white p-4 rounded-xl shadow-2xl w-full max-w-3xl z-10 animate-fade-in-up">
+            <!-- Close Button -->
+            <button onclick="closeMap()" class="absolute -top-10 right-0 sm:-right-10 text-white hover:text-accent transition duration-200 p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+            
+            <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Bản đồ địa điểm</h3>
+            
+            <!-- Map Embed Container -->
+            <div class="w-full flex justify-center items-center overflow-hidden rounded-lg border border-gray-200 map-responsive-container">
+                <!-- User's Embed Code Start -->
+                <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Công Viên Nước Hồ Núi Cốc&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://embed-googlemap.com">embed google maps in website</a></div><style>.mapouter{position:relative;text-align:right;width:600px;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:600px;height:400px;}.gmap_iframe {width:600px!important;height:400px!important;}</style></div>
+                <!-- User's Embed Code End -->
+            </div>
+        </div>
+    </div>
+
     <script>
         // Script điều khiển menu mobile
         const menuToggle = document.getElementById('menu-toggle');
@@ -329,13 +364,52 @@
             header.addEventListener('click', () => {
                 const content = header.nextElementSibling;
                 content.classList.toggle('open');
-                // Rotate icon
-                const icon = header.querySelector('[data-lucide="chevron-down"]');
-                if(icon) {
-                    // Simple rotation via class or style if needed, currently Lucide re-renders might reset it
-                    // but class toggle works for content
-                }
             });
+        });
+
+        // --- MAP MODAL SCRIPT ---
+        const mapModal = document.getElementById('map-modal');
+        const mapBtns = document.querySelectorAll('.btn-view-map');
+        const mapIframe = document.querySelector('.gmap_iframe');
+
+        // Hàm mở modal
+        function openMap() {
+            if (mapModal) {
+                mapModal.classList.remove('hidden');
+                mapModal.classList.add('flex');
+                document.body.style.overflow = 'hidden'; // Chặn cuộn trang web chính
+            }
+        }
+
+        // Hàm đóng modal
+        function closeMap() {
+            if (mapModal) {
+                mapModal.classList.add('hidden');
+                mapModal.classList.remove('flex');
+                document.body.style.overflow = ''; // Cho phép cuộn lại
+                // Reset iframe src khi đóng để dừng load (tuỳ chọn, nhưng tốt cho hiệu năng)
+                // if(mapIframe) mapIframe.src = ''; 
+            }
+        }
+
+        // Gán sự kiện click cho tất cả các nút Xem bản đồ
+        mapBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Lấy link bản đồ từ thuộc tính data-map-src
+                const mapSrc = btn.getAttribute('data-map-src');
+                if (mapSrc && mapIframe) {
+                    mapIframe.src = mapSrc;
+                }
+                openMap();
+            });
+        });
+
+        // Đóng modal khi nhấn phím ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeMap();
+            }
         });
     </script>
 </body>
