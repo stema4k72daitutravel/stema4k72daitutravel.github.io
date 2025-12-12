@@ -1,547 +1,640 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Các điểm du lịch nổi tiếng tại Đại Từ: Hồ Núi Cốc, Suối Cửa Tử, Suối Kẹm, Thác Đá Cổng và các điểm văn hóa trà." />
     <title>Điểm Du Lịch - A4K72 Journey Web</title>
-    
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Lucide Icons -->
     <script type="module">
-        import { createIcons, Menu, X, ChevronDown, MapPin, Camera, Coffee, Home, Palmtree } from 'https://cdn.jsdelivr.net/npm/lucide@latest/dist/esm/lucide.js';
-        window.addEventListener('load', () => {
-            createIcons({ icons: { Menu, X, ChevronDown, MapPin, Camera, Coffee, Home, Palmtree } });
+      import {
+        createIcons,
+        Menu,
+        X,
+        ChevronDown,
+        MapPin,
+        Camera,
+        Coffee,
+        Home,
+        Palmtree,
+      } from "https://cdn.jsdelivr.net/npm/lucide@latest/dist/esm/lucide.js";
+      window.addEventListener("load", () => {
+        createIcons({
+          icons: {
+            Menu,
+            X,
+            ChevronDown,
+            MapPin,
+            Camera,
+            Coffee,
+            Home,
+            Palmtree,
+          },
         });
+      });
     </script>
+    <link rel="stylesheet" type="text/css" href="CSS/styles.css" />
+  </head>
 
-    <!-- Link đến file CSS ngoài của bạn -->
-    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
-</head>
-<body class="bg-gray-50 flex flex-col min-h-screen font-montserrat relative">
-
-    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition duration-300 bg-primary shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="index.html" class="text-white font-extrabold text-sm sm:text-lg tracking-wider">
-                    A4K72 JOURNEY WEB
+  <body class="bg-gray-50 flex flex-col min-h-screen font-montserrat relative">
+    <header
+      id="navbar"
+      class="fixed top-0 left-0 w-full z-50 transition duration-300 bg-primary shadow-lg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <a
+            href="index.html"
+            class="text-white font-extrabold text-sm sm:text-lg tracking-wider">
+            A4K72 JOURNEY WEB
+          </a>
+          <nav class="hidden lg:flex space-x-2 h-full">
+            <ul class="flex items-center space-x-1 h-full">
+              <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+              <li class="group relative flex items-center h-full">
+                <a
+                  href="diem-du-lich.html"
+                  class="nav-link active flex items-center">
+                  Điểm du lịch
+                  <i
+                    data-lucide="chevron-down"
+                    class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180"></i>
                 </a>
-                <nav class="hidden lg:flex space-x-2 h-full">
-                    <ul class="flex items-center space-x-1 h-full">
-                        <li><a href="index.html" class="px-3 py-2 text-white hover:text-accent transition font-medium">Trang chủ</a></li>
-                        <li class="group relative flex items-center h-full">
-                            <a href="diem-du-lich.html" class="px-3 py-2 text-accent font-bold flex items-center">
-                                Điểm du lịch <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
-                            </a>
-                            <div class="absolute top-full left-0 w-48 bg-white shadow-lg rounded-b-lg hidden group-hover:block transition-all duration-200">
-                                <a href="#sinh-thai" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-primary">Du lịch sinh thái</a>
-                                <a href="#van-hoa" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-primary">Du lịch văn hoá</a>
-                            </div>
-                        </li>
-                        <li class="group relative flex items-center h-full">
-                            <a href="am-thuc.html" class="px-3 py-2 text-white hover:text-accent transition flex items-center">
-                                Ẩm thực <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
-                            </a>
-                            <div class="absolute top-full left-0 w-48 bg-white shadow-lg rounded-b-lg hidden group-hover:block transition-all duration-200">
-                                <a href="am-thuc.html#dac-san" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-primary">Đặc sản</a>
-                                <a href="am-thuc.html#mon-noi-bat" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-primary">Món ăn nổi bật</a>
-                            </div>
-                        </li>
-                        <li class="group relative flex items-center h-full">
-                            <a href="luu-tru.html" class="px-3 py-2 text-white hover:text-accent transition flex items-center">
-                                Lưu trú <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
-                            </a>
-                            <div class="absolute top-full left-0 w-48 bg-white shadow-lg rounded-b-lg hidden group-hover:block transition-all duration-200">
-                                <a href="luu-tru.html#homestay" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-primary">Homestay</a>
-                                <a href="luu-tru.html#camping" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-primary">Lều - camping</a>
-                            </div>
-                        </li>
-                        <li class="group relative flex items-center h-full">
-                            <a href="hoat-dong.html" class="px-3 py-2 text-white hover:text-accent transition flex items-center">
-                                Hoạt động <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
-                            </a>
-                            <div class="absolute top-full left-0 w-48 bg-white shadow-lg rounded-b-lg hidden group-hover:block transition-all duration-200">
-                                <a href="hoat-dong.html#boi" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-primary">Bơi</a>
-                                <a href="hoat-dong.html#tham-quan" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-primary">Tham quan</a>
-                                <a href="hoat-dong.html#cam-trai" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-primary">Cắm trại</a>
-                                <a href="hoat-dong.html#check-in" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-primary">Check in</a>
-                                <a href="hoat-dong.html#vui-choi" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-primary">Vui chơi</a>
-                            </div>
-                        </li>
-                        <li><a href="di-chuyen.html" class="px-3 py-2 text-white hover:text-accent transition font-medium">Di chuyển</a></li>
-                        <li><a href="lien-he.html" class="px-3 py-2 text-white hover:text-accent transition font-medium">Liên hệ</a></li>
-                    </ul>
-                </nav>
-                <button id="menu-toggle" class="lg:hidden text-white focus:outline-none p-2 rounded-lg">
-                    <i id="icon-menu" data-lucide="menu" class="w-7 h-7"></i>
-                    <i id="icon-x" data-lucide="x" class="w-7 h-7 hidden"></i>
-                </button>
-            </div>
+                <div class="dropdown-menu">
+                  <a href="diem-du-lich.html#sinh-thai" class="dropdown-item">
+                    Du lịch sinh thái
+                  </a>
+                  <a href="diem-du-lich.html#van-hoa" class="dropdown-item">
+                    Du lịch văn hoá
+                  </a>
+                </div>
+              </li>
+              <li class="group relative flex items-center h-full">
+                <a href="am-thuc.html" class="nav-link flex items-center">
+                  Ẩm thực
+                  <i
+                    data-lucide="chevron-down"
+                    class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180"></i>
+                </a>
+                <div class="dropdown-menu">
+                  <a href="am-thuc.html#dac-san" class="dropdown-item">
+                    Đặc sản
+                  </a>
+                  <a href="am-thuc.html#mon-noi-bat" class="dropdown-item">
+                    Món ăn nổi bật
+                  </a>
+                </div>
+              </li>
+              <li class="group relative flex items-center h-full">
+                <a href="luu-tru.html" class="nav-link flex items-center">
+                  Lưu trú
+                  <i
+                    data-lucide="chevron-down"
+                    class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180"></i>
+                </a>
+                <div class="dropdown-menu">
+                  <a href="luu-tru.html#homestay" class="dropdown-item">
+                    Homestay
+                  </a>
+                  <a href="luu-tru.html#camping" class="dropdown-item">
+                    Lều - camping
+                  </a>
+                </div>
+              </li>
+              <li><a href="di-chuyen.html" class="nav-link">Di chuyển</a></li>
+              <li><a href="lien-he.html" class="nav-link">Liên hệ</a></li>
+            </ul>
+          </nav>
+          <button
+            id="menu-toggle"
+            class="lg:hidden text-white focus:outline-none p-2 rounded-lg">
+            <i id="icon-menu" data-lucide="menu" class="w-7 h-7"></i>
+            <i id="icon-x" data-lucide="x" class="w-7 h-7 hidden"></i>
+          </button>
         </div>
-        <!-- Menu Mobile (Full Screen) -->
-        <div id="mobile-menu" class="hidden lg:hidden absolute top-16 left-0 w-full bg-primary transition-transform duration-300 shadow-xl z-40">
-             <div class="px-2 pt-2 pb-4 space-y-1">
-                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-accent hover:bg-white/10">Trang chủ</a>
-                
-                <!-- Mobile Dropdown: Điểm du lịch -->
-                <div class="mobile-dropdown-container">
-                    <div class="mobile-dropdown-header flex justify-between items-center bg-transparent hover:bg-white/5 p-2 rounded text-white cursor-pointer">
-                        Điểm du lịch <i data-lucide="chevron-down" class="w-4 h-4 ml-1 transition-transform"></i>
-                    </div>
-                    <div class="mobile-dropdown-content pl-4">
-                        <a href="#sinh-thai" class="block px-3 py-2 text-gray-300 hover:text-white">Du lịch sinh thái</a>
-                        <a href="#van-hoa" class="block px-3 py-2 text-gray-300 hover:text-white">Du lịch văn hoá</a>
-                    </div>
-                </div>
+      </div>
 
-                <!-- Mobile Dropdown: Ẩm thực -->
-                <div class="mobile-dropdown-container">
-                    <div class="mobile-dropdown-header flex justify-between items-center bg-transparent hover:bg-white/5 p-2 rounded text-white cursor-pointer">
-                        Ẩm thực <i data-lucide="chevron-down" class="w-4 h-4 ml-1 transition-transform"></i>
-                    </div>
-                    <div class="mobile-dropdown-content pl-4">
-                        <a href="am-thuc.html#dac-san" class="block px-3 py-2 text-gray-300 hover:text-white">Đặc sản</a>
-                        <a href="am-thuc.html#mon-noi-bat" class="block px-3 py-2 text-gray-300 hover:text-white">Món ăn nổi bật</a>
-                    </div>
-                </div>
-                
-                 <!-- Mobile Dropdown: Lưu trú -->
-                <div class="mobile-dropdown-container">
-                    <div class="mobile-dropdown-header flex justify-between items-center bg-transparent hover:bg-white/5 p-2 rounded text-white cursor-pointer">
-                        Lưu trú <i data-lucide="chevron-down" class="w-4 h-4 ml-1 transition-transform"></i>
-                    </div>
-                    <div class="mobile-dropdown-content pl-4">
-                        <a href="luu-tru.html#homestay" class="block px-3 py-2 text-gray-300 hover:text-white">Homestay</a>
-                        <a href="luu-tru.html#camping" class="block px-3 py-2 text-gray-300 hover:text-white">Lều - camping</a>
-                    </div>
-                </div>
-
-                <!-- Mobile Dropdown: Hoạt động -->
-                <div class="mobile-dropdown-container">
-                    <div class="mobile-dropdown-header flex justify-between items-center bg-transparent hover:bg-white/5 p-2 rounded text-white cursor-pointer">
-                        Hoạt động <i data-lucide="chevron-down" class="w-4 h-4 ml-1 transition-transform"></i>
-                    </div>
-                    <div class="mobile-dropdown-content pl-4">
-                        <a href="hoat-dong.html#boi" class="block px-3 py-2 text-gray-300 hover:text-white">Bơi</a>
-                        <a href="hoat-dong.html#tham-quan" class="block px-3 py-2 text-gray-300 hover:text-white">Tham quan</a>
-                        <a href="hoat-dong.html#cam-trai" class="block px-3 py-2 text-gray-300 hover:text-white">Cắm trại</a>
-                        <a href="hoat-dong.html#check-in" class="block px-3 py-2 text-gray-300 hover:text-white">Check in</a>
-                        <a href="hoat-dong.html#vui-choi" class="block px-3 py-2 text-gray-300 hover:text-white">Vui chơi</a>
-                    </div>
-                </div>
-                
-                <a href="di-chuyen.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-accent hover:bg-white/10">Di chuyển</a>
-                <a href="lien-he.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-accent hover:bg-white/10">Liên hệ</a>
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden absolute top-16 left-0 w-full bg-primary transition-transform duration-300 shadow-xl">
+        <div class="px-2 pt-2 pb-4 space-y-1">
+          <a href="index.html" class="mobile-nav-link active">Trang chủ</a>
+          <div class="mobile-dropdown-container">
+            <div
+              class="mobile-dropdown-header flex justify-between items-center bg-transparent hover:bg-white/5">
+              Điểm du lịch
+              <i
+                data-lucide="chevron-down"
+                class="w-4 h-4 ml-1 transition-transform"></i>
             </div>
+            <div class="mobile-dropdown-content">
+              <a
+                href="diem-du-lich.html#sinh-thai"
+                class="mobile-dropdown-item">
+                Du lịch sinh thái
+              </a>
+              <a href="diem-du-lich.html#van-hoa" class="mobile-dropdown-item">
+                Du lịch văn hoá
+              </a>
+            </div>
+          </div>
+          <div class="mobile-dropdown-container">
+            <div
+              class="mobile-dropdown-header flex justify-between items-center bg-transparent hover:bg-white/5">
+              Ẩm thực
+              <i
+                data-lucide="chevron-down"
+                class="w-4 h-4 ml-1 transition-transform"></i>
+            </div>
+            <div class="mobile-dropdown-content">
+              <a href="am-thuc.html#dac-san" class="mobile-dropdown-item">
+                Đặc sản
+              </a>
+              <a href="am-thuc.html#mon-noi-bat" class="mobile-dropdown-item">
+                Món ăn nổi bật
+              </a>
+            </div>
+          </div>
+          <div class="mobile-dropdown-container">
+            <div
+              class="mobile-dropdown-header flex justify-between items-center bg-transparent hover:bg-white/5">
+              Lưu trú
+              <i
+                data-lucide="chevron-down"
+                class="w-4 h-4 ml-1 transition-transform"></i>
+            </div>
+            <div class="mobile-dropdown-content">
+              <a href="luu-tru.html#homestay" class="mobile-dropdown-item">
+                Homestay
+              </a>
+              <a href="luu-tru.html#camping" class="mobile-dropdown-item">
+                Lều - camping
+              </a>
+            </div>
+          </div>
+          <a href="di-chuyen.html" class="mobile-nav-link">Di chuyển</a>
+          <a href="lien-he.html" class="mobile-nav-link">Liên hệ</a>
         </div>
+      </div>
     </header>
 
     <main class="flex-grow pt-16">
-        
-        <!-- Hero Section -->
-        <div class="relative h-[40vh] sm:h-[50vh] flex items-center justify-center">
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://cdn.media.dulich24.com.vn/bai-viet/du-lich-moc-chau-trai-nghiem-nhung-dieu-thu-vi-46020241/du-lich-moc-chau-trai-nghiem-nhung-dieu-thu-vi.jpg'); filter: brightness(0.6);"></div>
-            <div class="relative z-10 text-center px-4">
-                <h1 class="text-4xl sm:text-6xl font-merriweather text-white font-bold mb-4 drop-shadow-lg">Điểm Đến Hấp Dẫn</h1>
-                <p class="text-accent text-lg font-montserrat tracking-wider uppercase">Khám phá vẻ đẹp tiềm ẩn của Đại Từ</p>
-            </div>
+      <div
+        class="relative h-[40vh] sm:h-[50vh] flex items-center justify-center">
+        <div
+          class="absolute inset-0 bg-cover bg-center"
+          style="
+            background-image: url('https://cdn.media.dulich24.com.vn/bai-viet/du-lich-moc-chau-trai-nghiem-nhung-dieu-thu-vi-46020241/du-lich-moc-chau-trai-nghiem-nhung-dieu-thu-vi.jpg');
+            filter: brightness(0.6);
+          "></div>
+        <div class="relative z-10 text-center px-4 text-shadow-basic">
+          <h1
+            class="text-4xl sm:text-6xl font-merriweather text-white font-bold mb-4 drop-shadow-lg">
+            Điểm đến hấp dẫn
+          </h1>
+          <p
+            class="text-accent text-lg font-montserrat tracking-wider uppercase">
+            Khám phá vẻ đẹp tiềm ẩn của Đại Từ
+          </p>
+        </div>
+      </div>
+
+      <section
+        id="sinh-thai"
+        class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-primary uppercase tracking-wide">
+            Du Lịch Sinh Thái
+          </h2>
+          <div class="w-20 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
+          <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+            Hòa mình vào thiên nhiên xanh mát với những dòng suối, thác nước và
+            không gian hùng vĩ.
+          </p>
         </div>
 
-        <!-- Section 1: Du Lịch Sinh Thái -->
-        <section id="sinh-thai" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-primary uppercase tracking-wide">Du Lịch Sinh Thái</h2>
-                <div class="w-20 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
-                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Hòa mình vào thiên nhiên xanh mát với những dòng suối, thác nước và không gian hùng vĩ.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16">
+          <div class="overflow-hidden rounded-xl shadow-lg h-64 md:h-80 group">
+            <img
+              src="images/diem-du-lich/khu-du-lich-ho-nui-coc.jpg"
+              alt="Hồ Núi Cốc"
+              class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+              loading="lazy" />
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-3">
+              Khu Du Lịch Hồ Núi Cốc
+            </h3>
+            <p class="text-gray-600 mb-4 text-justify">
+              "Vịnh Hạ Long trên cạn" của Thái Nguyên với vẻ đẹp non nước hữu
+              tình gắn liền với huyền thoại chàng Cốc nàng Công. Khu du lịch
+              tích hợp nhiều hoạt động vui chơi giải trí và tham quan hang động.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center text-gray-700">
+                <i data-lucide="map-pin" class="w-4 h-4 text-accent mr-2"></i>
+                Xã Tân Thái, Đại Từ
+              </li>
+              <li class="flex items-center text-gray-700">
+                <i data-lucide="camera" class="w-4 h-4 text-accent mr-2"></i>
+                Tham quan, Vui chơi, Nghỉ dưỡng
+              </li>
+            </ul>
+            <button
+              type="button"
+              data-map-src="https://maps.google.com/maps?width=600&height=400&hl=en&q=Công Viên Nước Hồ Núi Cốc&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+              class="btn-view-map inline-block px-6 py-2 bg-primary text-white rounded-full hover:bg-green-900 transition cursor-pointer shadow-md transform hover:-translate-y-1">
+              Xem bản đồ
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center flex-row-reverse mb-16">
+          <div
+            class="md:order-2 overflow-hidden rounded-xl shadow-lg h-64 md:h-80 group">
+            <img
+              src="images/diem-du-lich/CuaTu.jpg"
+              alt="Suối Cửa Tử"
+              class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+              loading="lazy" />
+          </div>
+          <div class="md:order-1">
+            <h3 class="text-2xl font-bold text-gray-800 mb-3">Suối Cửa Tử</h3>
+            <p class="text-gray-600 mb-4 text-justify">
+              Dòng suối hoang sơ nằm sâu trong rừng, nổi tiếng với những tảng đá
+              lớn và làn nước mát lạnh. Là địa điểm lý tưởng cho các hoạt động
+              trekking mạo hiểm và khám phá thiên nhiên.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center text-gray-700">
+                <i data-lucide="map-pin" class="w-4 h-4 text-accent mr-2"></i>
+                Xã Hoàng Nông, Đại Từ
+              </li>
+              <li class="flex items-center text-gray-700">
+                <i data-lucide="camera" class="w-4 h-4 text-accent mr-2"></i>
+                Trekking, Tắm suối
+              </li>
+            </ul>
+            <button
+              type="button"
+              data-map-src="https://maps.google.com/maps?width=600&height=400&hl=en&q=Suối Cửa Tử&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+              class="btn-view-map inline-block px-6 py-2 bg-primary text-white rounded-full hover:bg-green-900 transition cursor-pointer shadow-md transform hover:-translate-y-1">
+              Xem bản đồ
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16">
+          <div class="overflow-hidden rounded-xl shadow-lg h-64 md:h-80 group">
+            <img
+              src="images/diem-du-lich/suoi-cua-tu_suoi-kem-la-bang-dai-tu_14.jpg"
+              alt="Suối Kẹm"
+              class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+              loading="lazy" />
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-3">
+              Suối Kẹm (La Bằng)
+            </h3>
+            <p class="text-gray-600 mb-4 text-justify">
+              Nằm dưới chân núi Tam Đảo, Suối Kẹm sở hữu dòng nước trong vắt
+              chảy qua những ghềnh đá. Khung cảnh thiên nhiên yên bình, thích
+              hợp cho những chuyến dã ngoại cuối tuần.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center text-gray-700">
+                <i data-lucide="map-pin" class="w-4 h-4 text-accent mr-2"></i>
+                Xã La Bằng, Đại Từ
+              </li>
+              <li class="flex items-center text-gray-700">
+                <i data-lucide="camera" class="w-4 h-4 text-accent mr-2"></i>
+                Picnic, Tắm mát
+              </li>
+            </ul>
+            <button
+              type="button"
+              data-map-src="https://maps.google.com/maps?width=600&height=400&hl=en&q=Suối Kẹm&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+              class="btn-view-map inline-block px-6 py-2 bg-primary text-white rounded-full hover:bg-green-900 transition cursor-pointer shadow-md transform hover:-translate-y-1">
+              Xem bản đồ
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center flex-row-reverse">
+          <div
+            class="md:order-2 overflow-hidden rounded-xl shadow-lg h-64 md:h-80 group">
+            <img
+              src="images/diem-du-lich/DaCong.webp"
+              alt="Thác Đá Cổng"
+              class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+              loading="lazy" />
+          </div>
+          <div class="md:order-1">
+            <h3 class="text-2xl font-bold text-gray-800 mb-3">Thác Đá Cổng</h3>
+            <p class="text-gray-600 mb-4 text-justify">
+              Một vẻ đẹp ẩn mình giữa đại ngàn. Thác Đá Cổng mang vẻ đẹp hùng vĩ
+              với dòng nước đổ xuống từ trên cao, tạo nên khung cảnh tráng lệ và
+              âm thanh núi rừng sống động.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center text-gray-700">
+                <i data-lucide="map-pin" class="w-4 h-4 text-accent mr-2"></i>
+                Xã Quân Chu, Đại Từ
+              </li>
+              <li class="flex items-center text-gray-700">
+                <i data-lucide="camera" class="w-4 h-4 text-accent mr-2"></i>
+                Khám phá, Chụp ảnh
+              </li>
+            </ul>
+            <button
+              type="button"
+              data-map-src="https://maps.google.com/maps?width=600&height=400&hl=en&q=Thác Đá Cổng&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+              class="btn-view-map inline-block px-6 py-2 bg-primary text-white rounded-full hover:bg-green-900 transition cursor-pointer shadow-md transform hover:-translate-y-1">
+              Xem bản đồ
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <div class="h-px bg-gray-200 w-full"></div>
+
+      <section
+        id="van-hoa"
+        class="py-16 bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-primary uppercase tracking-wide">
+            Gợi ý điểm dừng chân
+          </h2>
+          <div class="w-20 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div
+            class="group bg-gray-50 rounded-xl overflow-hidden shadow transition hover:shadow-xl hover:-translate-y-1 flex flex-col">
+            <div class="relative h-48 overflow-hidden">
+              <img
+                src="images/diem-du-lich/HoangNongFarm.gif"
+                alt="Hoàng Nông Farm"
+                class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                loading="lazy" />
             </div>
-
-            <!-- Item 1: Hồ Núi Cốc -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16">
-                <div class="overflow-hidden rounded-xl shadow-lg h-64 md:h-80 group">
-                    <img src="images/diem-du-lich/khu-du-lich-ho-nui-coc.jpg" alt="Hồ Núi Cốc" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Khu Du Lịch Hồ Núi Cốc</h3>
-                    <p class="text-gray-600 mb-4 text-justify">"Vịnh Hạ Long trên cạn" của Thái Nguyên với vẻ đẹp non nước hữu tình gắn liền với huyền thoại chàng Cốc nàng Công. Khu du lịch tích hợp nhiều hoạt động vui chơi giải trí và tham quan hang động.</p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-center text-gray-700"><i data-lucide="map-pin" class="w-4 h-4 text-accent mr-2"></i> Xã Tân Thái, Đại Từ</li>
-                        <li class="flex items-center text-gray-700"><i data-lucide="camera" class="w-4 h-4 text-accent mr-2"></i> Tham quan, Vui chơi, Nghỉ dưỡng</li>
-                    </ul>
-                    <button type="button" data-map-src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Công Viên Nước Hồ Núi Cốc&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" class="btn-view-map inline-block px-6 py-2 bg-primary text-white rounded-full hover:bg-green-900 transition cursor-pointer shadow-md transform hover:-translate-y-1">
-                        Xem bản đồ
-                    </button>
-                </div>
+            <div class="p-5 flex-grow">
+              <h3 class="text-xl font-bold text-primary mb-2 flex items-center">
+                <i data-lucide="coffee" class="w-5 h-5 mr-2"></i>
+                Hoàng Nông Farm
+              </h3>
+              <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                Trải nghiệm không gian văn hoá trà tại Hoàng Nông Farm. Thưởng
+                thức hương vị trà thơm ngon giữa đồi chè bát ngát.
+              </p>
+              <button
+                onclick="openContentModal('tra')"
+                class="text-primary font-semibold text-sm hover:text-accent mt-auto flex items-center transition-colors">
+                Tìm hiểu thêm
+                <span class="ml-1 text-lg">→</span>
+              </button>
             </div>
+          </div>
 
-            <!-- Item 2: Suối Cửa Tử (Đảo chiều) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center flex-row-reverse mb-16">
-                <div class="md:order-2 overflow-hidden rounded-xl shadow-lg h-64 md:h-80 group">
-                    <img src="images/diem-du-lich/CuaTu.jpg" alt="Suối Cửa Tử" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                </div>
-                <div class="md:order-1">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Suối Cửa Tử</h3>
-                    <p class="text-gray-600 mb-4 text-justify">Dòng suối hoang sơ nằm sâu trong rừng, nổi tiếng với những tảng đá lớn và làn nước mát lạnh. Là địa điểm lý tưởng cho các hoạt động trekking mạo hiểm và khám phá thiên nhiên.</p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-center text-gray-700"><i data-lucide="map-pin" class="w-4 h-4 text-accent mr-2"></i> Xã Hoàng Nông, Đại Từ</li>
-                        <li class="flex items-center text-gray-700"><i data-lucide="camera" class="w-4 h-4 text-accent mr-2"></i> Trekking, Tắm suối</li>
-                    </ul>
-                    <button type="button" data-map-src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Suối Cửa Tử&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" class="btn-view-map inline-block px-6 py-2 bg-primary text-white rounded-full hover:bg-green-900 transition cursor-pointer shadow-md transform hover:-translate-y-1">
-                        Xem bản đồ
-                    </button>
-                </div>
+          <div
+            class="group bg-gray-50 rounded-xl overflow-hidden shadow transition hover:shadow-xl hover:-translate-y-1 flex flex-col">
+            <div class="relative h-48 overflow-hidden">
+              <img
+                src="images/diem-du-lich/MojenRetreat.jpg"
+                alt="Mojen Retreat"
+                class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                loading="lazy" />
+              <div
+                class="absolute top-2 right-2 bg-accent text-primary text-xs font-bold px-2 py-1 rounded shadow">
+                Check-in
+              </div>
             </div>
-
-            <!-- Item 3: Suối Kẹm / Thác Khuôn Tát -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16">
-                <div class="overflow-hidden rounded-xl shadow-lg h-64 md:h-80 group">
-                    <img src="images/diem-du-lich/suoi-cua-tu_suoi-kem-la-bang-dai-tu_14.jpg" alt="Suối Kẹm" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Suối Kẹm (La Bằng)</h3>
-                    <p class="text-gray-600 mb-4 text-justify">Nằm dưới chân núi Tam Đảo, Suối Kẹm sở hữu dòng nước trong vắt chảy qua những ghềnh đá. Khung cảnh thiên nhiên yên bình, thích hợp cho những chuyến dã ngoại cuối tuần.</p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-center text-gray-700"><i data-lucide="map-pin" class="w-4 h-4 text-accent mr-2"></i> Xã La Bằng, Đại Từ</li>
-                        <li class="flex items-center text-gray-700"><i data-lucide="camera" class="w-4 h-4 text-accent mr-2"></i> Picnic, Tắm mát</li>
-                    </ul>
-                    <button type="button" data-map-src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Suối Kẹm&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" class="btn-view-map inline-block px-6 py-2 bg-primary text-white rounded-full hover:bg-green-900 transition cursor-pointer shadow-md transform hover:-translate-y-1">
-                        Xem bản đồ
-                    </button>
-                </div>
+            <div class="p-5 flex-grow">
+              <h3 class="text-xl font-bold text-primary mb-2 flex items-center">
+                <i data-lucide="palmtree" class="w-5 h-5 mr-2"></i>
+                Đợi Cafe
+              </h3>
+              <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                Điểm đến nghỉ dưỡng "sang chảnh" giữa lòng thiên nhiên. Không
+                gian thư giãn tuyệt vời bên dòng suối.
+              </p>
+              <button
+                onclick="openContentModal('mojen')"
+                class="text-primary font-semibold text-sm hover:text-accent mt-auto flex items-center transition-colors">
+                Tìm hiểu thêm
+                <span class="ml-1 text-lg">→</span>
+              </button>
             </div>
+          </div>
 
-            <!-- Item 4: Thác Đá Xổng (Đảo chiều) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center flex-row-reverse">
-                <div class="md:order-2 overflow-hidden rounded-xl shadow-lg h-64 md:h-80 group">
-                    <img src="images/diem-du-lich/DaCong.webp" alt="Thác Đá Cổng" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                </div>
-                <div class="md:order-1">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Thác Đá Cổng</h3>
-                    <p class="text-gray-600 mb-4 text-justify">Một vẻ đẹp ẩn mình giữa đại ngàn. Thác Đá Cổng mang vẻ đẹp hùng vĩ với dòng nước đổ xuống từ trên cao, tạo nên khung cảnh tráng lệ và âm thanh núi rừng sống động.</p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-center text-gray-700"><i data-lucide="map-pin" class="w-4 h-4 text-accent mr-2"></i> Xã Quân Chu, Đại Từ</li>
-                        <li class="flex items-center text-gray-700"><i data-lucide="camera" class="w-4 h-4 text-accent mr-2"></i> Khám phá, Chụp ảnh</li>
-                    </ul>
-                    <button type="button" data-map-src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Thác Đá Cổng&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" class="btn-view-map inline-block px-6 py-2 bg-primary text-white rounded-full hover:bg-green-900 transition cursor-pointer shadow-md transform hover:-translate-y-1">
-                        Xem bản đồ
-                    </button>
-                </div>
+          <div
+            class="group bg-gray-50 rounded-xl overflow-hidden shadow transition hover:shadow-xl hover:-translate-y-1 flex flex-col">
+            <div class="relative h-48 overflow-hidden">
+              <img
+                src="images/diem-du-lich/NamPhuong.jpg"
+                alt="Nhà sàn Nam Phương"
+                class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                loading="lazy" />
+              <div
+                class="absolute top-2 right-2 bg-accent text-primary text-xs font-bold px-2 py-1 rounded shadow">
+                Văn hoá
+              </div>
             </div>
-        </section>
-
-        <div class="h-px bg-gray-200 w-full"></div>
-
-        <!-- Section 2: Văn Hoá & Trải Nghiệm -->
-        <section id="van-hoa" class="py-16 bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-primary uppercase tracking-wide">Văn Hoá - Trải Nghiệm</h2>
-                <div class="w-20 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
+            <div class="p-5 flex-grow">
+              <h3 class="text-xl font-bold text-primary mb-2 flex items-center">
+                <i data-lucide="home" class="w-5 h-5 mr-2"></i>
+                Nhà Sàn Nam Phương
+              </h3>
+              <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                Khám phá kiến trúc nhà sàn độc đáo và đời sống văn hoá của người
+                dân địa phương.
+              </p>
+              <button
+                onclick="openContentModal('namphuong')"
+                class="text-primary font-semibold text-sm hover:text-accent mt-auto flex items-center transition-colors">
+                Tìm hiểu thêm
+                <span class="ml-1 text-lg">→</span>
+              </button>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                
-                <!-- Card 1: Văn hoá Trà (Hoàng Nông Farm) -->
-                <div class="group bg-gray-50 rounded-xl overflow-hidden shadow transition hover:shadow-xl hover:-translate-y-1 flex flex-col">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="images/diem-du-lich/HoangNongFarm.gif" alt="Hoàng Nông Farm" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                        <div class="absolute top-2 right-2 bg-accent text-primary text-xs font-bold px-2 py-1 rounded shadow">Trải nghiệm</div>
-                    </div>
-                    <div class="p-5 flex-grow">
-                        <h3 class="text-xl font-bold text-primary mb-2 flex items-center"><i data-lucide="coffee" class="w-5 h-5 mr-2"></i> Văn hoá Trà</h3>
-                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">Trải nghiệm không gian văn hoá trà tại Hoàng Nông Farm. Thưởng thức hương vị trà thơm ngon giữa đồi chè bát ngát.</p>
-                        <!-- Nút kích hoạt Modal -->
-                        <button onclick="openContentModal('tra')" class="text-primary font-semibold text-sm hover:text-accent mt-auto flex items-center transition-colors">
-                            Tìm hiểu thêm <span class="ml-1 text-lg">→</span>
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Card 2: Nghỉ Dưỡng (Mojen Retreat) -->
-                <div class="group bg-gray-50 rounded-xl overflow-hidden shadow transition hover:shadow-xl hover:-translate-y-1 flex flex-col">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="images/diem-du-lich/MojenRetreat.jpg" alt="Mojen Retreat" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                        <div class="absolute top-2 right-2 bg-accent text-primary text-xs font-bold px-2 py-1 rounded shadow">Check-in</div>
-                    </div>
-                    <div class="p-5 flex-grow">
-                        <h3 class="text-xl font-bold text-primary mb-2 flex items-center"><i data-lucide="palmtree" class="w-5 h-5 mr-2"></i> Mojen Retreat</h3>
-                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">Điểm đến nghỉ dưỡng "sang chảnh" giữa lòng thiên nhiên. Không gian thư giãn tuyệt vời bên dòng suối.</p>
-                        <!-- Nút kích hoạt Modal -->
-                        <button onclick="openContentModal('mojen')" class="text-primary font-semibold text-sm hover:text-accent mt-auto flex items-center transition-colors">
-                            Tìm hiểu thêm <span class="ml-1 text-lg">→</span>
-                        </button>
-                    </div>
-                </div>
-
-                 <!-- Card 3: Du lịch cộng đồng (Nam Phương) -->
-                 <div class="group bg-gray-50 rounded-xl overflow-hidden shadow transition hover:shadow-xl hover:-translate-y-1 flex flex-col">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="images/diem-du-lich/NamPhuong.jpg" alt="Nhà sàn Nam Phương" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                        <div class="absolute top-2 right-2 bg-accent text-primary text-xs font-bold px-2 py-1 rounded shadow">Văn hoá</div>
-                    </div>
-                    <div class="p-5 flex-grow">
-                        <h3 class="text-xl font-bold text-primary mb-2 flex items-center"><i data-lucide="home" class="w-5 h-5 mr-2"></i> Nhà Sàn Nam Phương</h3>
-                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">Khám phá kiến trúc nhà sàn độc đáo và đời sống văn hoá của người dân địa phương.</p>
-                         <!-- Nút kích hoạt Modal -->
-                         <button onclick="openContentModal('namphuong')" class="text-primary font-semibold text-sm hover:text-accent mt-auto flex items-center transition-colors">
-                            Tìm hiểu thêm <span class="ml-1 text-lg">→</span>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </section>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer id="footer" class="bg-primary text-white py-10 sm:py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-            <!-- Cột 1: Logo và Tóm tắt -->
-            <div>
-                <h3 class="font-extrabold text-xl tracking-wider mb-4">A4K72 JOURNEY WEB</h3>
-                <p class="text-sm text-gray-300">
-                    Khám phá vẻ đẹp tự nhiên, lịch sử và văn hóa độc đáo của Đại Từ, Thái Nguyên.
-                </p>
-            </div>
-
-            <!-- Cột 2: Thông tin Liên hệ -->
-            <div class="md:col-span-1">
-                <h3 class="font-bold text-lg mb-4 text-accent">LIÊN HỆ - HỖ TRỢ</h3>
-                <ul class="space-y-2 text-sm text-gray-300">
-                    <li>Email: stem.a4k72.daitutravel@gmail.com</li>
-                    <li>Hotline: 0123 456 789</li>
-                    <li>Địa chỉ: Trung tâm huyện Đại Từ, tỉnh Thái Nguyên.</li>
-                    <li>Giờ hoạt động: 8h00 – 17h00 hàng ngày.</li>
-                </ul>
-            </div>
-
-            <!-- Cột 3: Menu nhanh -->
-            <div class="md:col-span-1">
-                <h3 class="font-bold text-lg mb-4 text-accent">MENU NHANH</h3>
-                <ul class="space-y-2 text-sm text-gray-300">
-                    <li><a href="index.html" class="hover:text-white transition duration-200">Trang chủ</a></li>
-                    <li><a href="diem-du-lich.html" class="hover:text-white transition duration-200">Điểm du lịch</a></li>
-                    <li><a href="am-thuc.html" class="hover:text-white transition duration-200">Ẩm thực</a></li>
-                    <li><a href="luu-tru.html" class="hover:text-white transition duration-200">Lưu trú</a></li>
-                    <li><a href="hoat-dong.html" class="hover:text-white transition duration-200">Hoạt động</a></li>
-                    <li><a href="di-chuyen.html" class="hover:text-white transition duration-200">Di chuyển</a></li>
-                    <li><a href="lien-he.html" class="hover:text-white transition duration-200">Liên hệ</a></li>
-                </ul>
-            </div>
+    <footer id="footer" class="bg-footer text-white py-10 sm:py-16">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+        <div>
+          <h3 class="font-extrabold text-xl tracking-wider mb-4">
+            A4K72 JOURNEY WEB
+          </h3>
+          <p class="text-sm text-gray-300">
+            Khám phá vẻ đẹp tự nhiên, lịch sử và văn hóa độc đáo của Đại Từ,
+            Thái Nguyên.
+          </p>
         </div>
-        <div class="mt-8 pt-6 border-t border-gray-700 text-center">
-            <p class="text-xs text-gray-400">&copy; 2025 A4K72 Journey Web. All rights reserved.</p>
+        <div class="md:col-span-1">
+          <h3 class="font-bold text-lg mb-4 text-accent">LIÊN HỆ - HỖ TRỢ</h3>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li>Email: stem.a4k72.daitutravel@gmail.com</li>
+            <li>Hotline: 0123 456 789</li>
+            <li>Địa chỉ: Trung tâm huyện Đại Từ, tỉnh Thái Nguyên.</li>
+            <li>Giờ hoạt động: 8h00 – 17h00 hàng ngày.</li>
+          </ul>
         </div>
+        <div class="md:col-span-1">
+          <h3 class="font-bold text-lg mb-4 text-accent">MENU NHANH</h3>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li>
+              <a
+                href="index.html"
+                class="hover:text-white transition duration-200">
+                Trang chủ
+              </a>
+            </li>
+            <li>
+              <a
+                href="diem-du-lich.html"
+                class="hover:text-white transition duration-200">
+                Điểm du lịch
+              </a>
+            </li>
+            <li>
+              <a
+                href="am-thuc.html"
+                class="hover:text-white transition duration-200">
+                Ẩm thực
+              </a>
+            </li>
+            <li>
+              <a
+                href="luu-tru.html"
+                class="hover:text-white transition duration-200">
+                Lưu trú
+              </a>
+            </li>
+            <li>
+              <a
+                href="di-chuyen.html"
+                class="hover:text-white transition duration-200">
+                Di chuyển
+              </a>
+            </li>
+            <li>
+              <a
+                href="lien-he.html"
+                class="hover:text-white transition duration-200">
+                Liên hệ
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8 pt-6 border-t border-gray-700 text-center">
+        <p class="text-xs text-gray-400">
+          &copy; 2025 A4K72 Journey Web. All rights reserved.
+        </p>
+      </div>
     </footer>
 
-    <!-- === MAP MODAL AREA === -->
-    <div id="map-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
-        <!-- Backdrop -->
-        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" onclick="closeMap()"></div>
-        <!-- Modal Content -->
-        <div class="relative bg-white p-4 rounded-xl shadow-2xl w-full max-w-3xl z-10 animate-fade-in-up">
-            <button onclick="closeMap()" class="absolute -top-10 right-0 sm:-right-10 text-white hover:text-accent transition duration-200 p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-            </button>
-            <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Bản đồ địa điểm</h3>
-            <div class="w-full flex justify-center items-center overflow-hidden rounded-lg border border-gray-200 map-responsive-container">
-                <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe w-full h-[400px]" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Công Viên Nước Hồ Núi Cốc&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div><style>.mapouter{position:relative;text-align:right;width:100%;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:400px;}.gmap_iframe {width:100%!important;height:400px!important;}</style></div>
+    <div
+      id="map-modal"
+      class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+      <div
+        class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
+        onclick="closeMap()"></div>
+      <div
+        class="relative bg-white p-4 rounded-xl shadow-2xl w-full max-w-3xl z-10 animate-fade-in-up">
+        <button
+          onclick="closeMap()"
+          class="absolute -top-10 right-0 sm:-right-10 text-white hover:text-accent transition duration-200 p-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-x">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+        <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">
+          Bản đồ địa điểm
+        </h3>
+        <div
+          class="w-full flex justify-center items-center overflow-hidden rounded-lg border border-gray-200 map-responsive-container">
+          <div class="mapouter w-full h-[400px] relative">
+            <div class="gmap_canvas w-full h-full bg-none overflow-hidden">
+              <iframe
+                class="gmap_iframe w-full h-full"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+                src="https://maps.google.com/maps?width=600&height=400&hl=en&q=Công Viên Nước Hồ Núi Cốc&t=&z=14&ie=UTF8&iwloc=B&output=embed"></iframe>
             </div>
+          </div>
         </div>
+      </div>
     </div>
 
-    <!-- === CONTENT DETAILS MODAL (Phần mới thêm) === -->
-    <div id="content-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
-        <!-- Lớp nền mờ -->
-        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity" onclick="closeContentModal()"></div>
-        
-        <!-- Khung Modal -->
-        <div class="relative bg-white rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] z-10 animate-fade-in-up flex flex-col overflow-hidden">
-            
-            <!-- Header Modal (Cố định) -->
-            <div class="flex justify-between items-center p-4 border-b border-gray-200 bg-white sticky top-0 z-20">
-                <h3 id="modal-content-title" class="text-xl md:text-2xl font-bold text-primary">Tiêu đề bài viết</h3>
-                <button onclick="closeContentModal()" class="text-gray-500 hover:text-red-500 transition p-1 bg-gray-100 rounded-full hover:bg-gray-200">
-                    <!-- SVG icon X -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-                </button>
-            </div>
-    
-            <!-- Phần thân cuộn được (Scrollable Body) -->
-            <div class="p-6 overflow-y-auto custom-scrollbar">
-                <!-- Gallery ảnh -->
-                <div id="modal-content-gallery" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                    <!-- Ảnh sẽ được Javascript chèn vào đây -->
-                </div>
-    
-                <!-- Nội dung bài viết -->
-                <div class="prose max-w-none text-gray-700 text-justify leading-relaxed space-y-4">
-                    <div id="modal-content-desc">
-                        <!-- Nội dung text sẽ được chèn vào đây -->
-                    </div>
-                </div>
-            </div>
+    <div
+      id="content-modal"
+      class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+      <div
+        class="absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity"
+        onclick="closeContentModal()"></div>
+      <div
+        class="relative bg-white rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] z-10 animate-fade-in-up flex flex-col overflow-hidden">
+        <div
+          class="flex justify-between items-center p-4 border-b border-gray-200 bg-white sticky top-0 z-20">
+          <h3
+            id="modal-content-title"
+            class="text-xl md:text-2xl font-bold text-primary">
+            Tiêu đề bài viết
+          </h3>
+          <button
+            onclick="closeContentModal()"
+            class="text-gray-500 hover:text-red-500 transition p-1 bg-gray-100 rounded-full hover:bg-gray-200">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-x">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
         </div>
+        <div class="p-6 overflow-y-auto custom-scrollbar">
+          <div
+            id="modal-content-gallery"
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6"></div>
+          <div
+            class="prose max-w-none text-gray-700 text-justify leading-relaxed space-y-4">
+            <div id="modal-content-desc"></div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <script>
-        // === MOBILE MENU SCRIPT ===
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const iconMenu = document.getElementById('icon-menu');
-        const iconX = document.getElementById('icon-x');
-
-        if (menuToggle && mobileMenu) {
-            menuToggle.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                iconMenu.classList.toggle('hidden');
-                iconX.classList.toggle('hidden');
-            });
-        }
-        
-        // Mobile Dropdown Animation
-        document.querySelectorAll('.mobile-dropdown-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const content = header.nextElementSibling;
-                const arrow = header.querySelector('[data-lucide="chevron-down"]');
-                
-                content.classList.toggle('open');
-                if(arrow) {
-                     arrow.style.transform = content.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
-                }
-            });
-        });
-
-        // === MAP MODAL SCRIPT ===
-        const mapModal = document.getElementById('map-modal');
-        const mapBtns = document.querySelectorAll('.btn-view-map');
-        const mapIframe = document.querySelector('.gmap_iframe');
-
-        function openMap() {
-            if (mapModal) {
-                mapModal.classList.remove('hidden');
-                mapModal.classList.add('flex');
-                document.body.style.overflow = 'hidden'; 
-            }
-        }
-
-        function closeMap() {
-            if (mapModal) {
-                mapModal.classList.add('hidden');
-                mapModal.classList.remove('flex');
-                document.body.style.overflow = '';
-            }
-        }
-
-        mapBtns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const mapSrc = btn.getAttribute('data-map-src');
-                if (mapSrc && mapIframe) {
-                    mapIframe.src = mapSrc;
-                }
-                openMap();
-            });
-        });
-
-        // === CONTENT DETAIL MODAL SCRIPT ===
-        // Dữ liệu nội dung (Có thể mở rộng thêm)
-        const contentData = {
-            'tra': {
-                title: "Văn hoá Trà tại Hoàng Nông Farm",
-                images: [
-                    "https://media.baothainguyen.vn/upload/2021/11/04/13/46/52e519c2-ab16-43f1-a128-46c59b20752d.jpg", 
-                    "https://media.dulich24.com.vn/bai-viet/du-lich-moc-chau-trai-nghiem-nhung-dieu-thu-vi-46020241/du-lich-moc-chau-trai-nghiem-nhung-dieu-thu-vi.jpg",
-                    "https://hoangnongfarm.vn/wp-content/uploads/2023/10/trai-nghiem-hai-che-1.jpg"
-                ],
-                desc: `
-                    <h4 class="font-bold text-lg text-primary mb-2">1. Không gian văn hóa trà độc đáo</h4>
-                    <p>Đến với Hoàng Nông Farm, du khách không chỉ được ngắm nhìn những đồi chè xanh bát ngát trải dài tít tắp mà còn được trực tiếp tham gia vào quy trình sản xuất trà truyền thống của người dân Đại Từ. Đây là nơi hội tụ tinh hoa của vùng chè Thái Nguyên danh tiếng.</p>
-                    
-                    <h4 class="font-bold text-lg text-primary mb-2 mt-4">2. Trải nghiệm thực tế "Một ngày làm nông dân"</h4>
-                    <p>Bạn sẽ được hóa thân thành những "nghệ nhân" hái chè thực thụ với gùi tre trên vai, học cách hái "một tôm hai lá" đúng chuẩn. Sau đó, dưới sự hướng dẫn của các nghệ nhân, bạn sẽ tự tay sao chè bằng chảo gang trên bếp củi truyền thống, cảm nhận hương thơm ngào ngạt lan tỏa trong không gian.</p>
-                    
-                    <h4 class="font-bold text-lg text-primary mb-2 mt-4">3. Thưởng trà và Check-in</h4>
-                    <p>Cuối cùng là giây phút thư giãn nhất: tự tay pha và thưởng thức những ấm trà thơm ngon do chính mình làm ra. Ngoài ra, không gian tại đây cực kỳ thích hợp để check-in với những bộ ảnh mang phong cách nàng thơ, vintage giữa thiên nhiên hùng vĩ hay bên những ấm trà đạo cụ được sắp xếp tinh tế.</p>
-                `
-            },
-            'mojen': {
-                title: "Mojen Retreat - Chữa lành giữa thiên nhiên",
-                images: [
-                    "https://mia.vn/media/uploads/blog-du-lich/mojen-retreat-thai-nguyen-06-1663044439.jpg",
-                    "https://mia.vn/media/uploads/blog-du-lich/mojen-retreat-thai-nguyen-01-1663044439.jpg",
-                    "https://thainguyentourism.vn/uploads/images/TinTuc/Nam2022/T9/mojen-retreat.jpg"
-                ],
-                desc: `
-                    <h4 class="font-bold text-lg text-primary mb-2">1. Nơi trốn bình yên (Hideaway)</h4>
-                    <p>Mojen Retreat nằm lọt thỏm giữa thung lũng xanh mát, tách biệt hoàn toàn với khói bụi thành phố. Bên cạnh là dòng suối róc rách chảy quanh năm tạo nên bản nhạc nền thư giãn tuyệt vời. Đây là mô hình nghỉ dưỡng kết hợp camping cao cấp (Glamping), nơi bạn có thể tận hưởng tiện nghi hiện đại nhưng vẫn hòa mình hoàn toàn vào thiên nhiên.</p>
-                    
-                    <h4 class="font-bold text-lg text-primary mb-2 mt-4">2. Hoạt động & Dịch vụ</h4>
-                    <p>Tại đây phục vụ các set nướng BBQ ngoài trời cực "chill", đốt lửa trại vào ban đêm để mọi người cùng quây quần. Ban ngày, bạn có thể tắm suối tự nhiên với làn nước trong vắt.</p>
-                    <p>Không gian được decor tỉ mỉ từng góc nhỏ với phong cách Rustic (mộc mạc), sử dụng nhiều vật liệu gỗ và đá, mang lại cảm giác ấm cúng và sang trọng, hứa hẹn cho ra đời hàng nghìn bức ảnh "sống ảo".</p>
-                `
-            },
-            'namphuong': {
-                title: "Nhà Sàn Nam Phương - Hồn dân tộc",
-                images: [
-                    "https://reviewthainguyen.com/wp-content/uploads/2021/10/Nha-san-Nam-Phuong-3.jpg",
-                    "https://reviewthainguyen.com/wp-content/uploads/2021/10/Nha-san-Nam-Phuong-1.jpg",
-                    "https://vcdn-dulich.vnecdn.net/2020/06/05/lang-nha-san-thai-nguyen-2-2663-1591353683.jpg"
-                ],
-                desc: `
-                    <h4 class="font-bold text-lg text-primary mb-2">1. Kiến trúc độc đáo</h4>
-                    <p>Nhà sàn Nam Phương lưu giữ gần như nguyên vẹn kiến trúc nhà sàn cổ của đồng bào dân tộc tại Thái Nguyên. Mái lá cọ dày dặn, hệ thống cột gỗ lim chắc chắn và sàn tre tạo nên một không gian thoáng mát vào mùa hè, ấm áp vào mùa đông. Đây là nơi lưu giữ hồn cốt văn hóa của người dân bản địa.</p>
-                    
-                    <h4 class="font-bold text-lg text-primary mb-2 mt-4">2. Văn hóa và Ẩm thực</h4>
-                    <p>Du khách đến đây sẽ được thưởng thức các món ăn đặc sản đậm chất núi rừng như: xôi ngũ sắc dẻo thơm, gà đồi nướng than hoa, cá suối chiên giòn, nộm hoa chuối...</p>
-                    <p>Đặc biệt vào các dịp lễ hội hoặc theo yêu cầu, du khách còn được tham gia giao lưu văn nghệ, nghe hát Then, đàn Tính - di sản văn hóa phi vật thể quý báu của người Tày, Nùng.</p>
-                `
-            }
-        };
-
-        const contentModal = document.getElementById('content-modal');
-        const modalTitle = document.getElementById('modal-content-title');
-        const modalGallery = document.getElementById('modal-content-gallery');
-        const modalDesc = document.getElementById('modal-content-desc');
-
-        function openContentModal(id) {
-            const data = contentData[id];
-            if (!data) return;
-
-            // 1. Gán tiêu đề
-            modalTitle.textContent = data.title;
-
-            // 2. Gán nội dung
-            modalDesc.innerHTML = data.desc;
-
-            // 3. Tạo gallery ảnh
-            modalGallery.innerHTML = ''; // Xóa ảnh cũ
-            if (data.images && data.images.length > 0) {
-                data.images.forEach(imgSrc => {
-                    const imgDiv = document.createElement('div');
-                    imgDiv.className = 'rounded-lg overflow-hidden shadow-md h-56 bg-gray-200';
-                    imgDiv.innerHTML = `<img src="${imgSrc}" loading="lazy" alt="Gallery Image" class="w-full h-full object-cover hover:scale-105 transition duration-500 cursor-pointer">`;
-                    modalGallery.appendChild(imgDiv);
-                });
-            }
-
-            // 4. Hiển thị modal
-            contentModal.classList.remove('hidden');
-            contentModal.classList.add('flex');
-            document.body.style.overflow = 'hidden'; // Chặn cuộn trang chính
-        }
-
-        function closeContentModal() {
-            contentModal.classList.add('hidden');
-            contentModal.classList.remove('flex');
-            document.body.style.overflow = ''; // Cho phép cuộn lại
-        }
-
-        // Đóng modal khi nhấn ESC
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeContentModal();
-                closeMap();
-            }
-        });
-    </script>
-</body>
+    <script src="scripts/modal.js"></script>
+    <script src="scripts/mobileMenu.js"></script>
+    <script src="scripts/smartNavbar.js"></script>
+    <script src="scripts/smoothScroll.js"></script>
+  </body>
 </html>
