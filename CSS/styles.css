@@ -14,9 +14,13 @@ body {
 }
 
 /* Màu chủ đạo */
+<<<<<<< HEAD
 .bg-primary { background-color: #102A0E; }
 <<<<<<< HEAD
 .bg-navbar { background-color: #102A0E; }
+=======
+.bg-primary { background-color: #2a6a1e; }
+>>>>>>> parent of d9fe2de (changelog)
 .bg-footer { background-color: #102A0E; }
 .bg-header { color: rgba(0,0,0); }
 =======
