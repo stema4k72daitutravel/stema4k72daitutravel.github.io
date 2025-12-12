@@ -37,80 +37,19 @@
         });
       });
     </script>
-    <!-- Cấu hình màu cho Tailwind -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: '#1a472a', // Màu xanh đậm chủ đạo
-              secondary: '#2d5a27',
-              accent: '#d4a373', // Màu nhấn (cam đất/vàng)
-              footer: '#111827',
-            },
-            fontFamily: {
-              montserrat: ['Montserrat', 'sans-serif'],
-              merriweather: ['Merriweather', 'serif'],
-            },
-          }
-        }
-      }
-    </script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Great+Vibes&family=Merriweather:wght@700&display=swap"
-      rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="CSS/styles.css" />
-    <style>
-      .text-shadow-basic {
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      }
-      .dropdown-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: white;
-        min-width: 200px;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        border-radius: 0.5rem;
-        padding: 0.5rem 0;
-        z-index: 50;
-      }
-      .group:hover .dropdown-menu {
-        display: block;
-      }
-      .dropdown-item {
-        display: block;
-        padding: 0.5rem 1rem;
-        color: #374151;
-        transition: background-color 0.2s;
-      }
-      .dropdown-item:hover {
-        background-color: #f3f4f6;
-        color: #1a472a;
-      }
-      .nav-link {
-        color: white;
-        padding: 0 1rem;
-        font-weight: 600;
-        transition: color 0.2s;
-      }
-      .nav-link:hover, .nav-link.active {
-        color: #d4a373;
-      }
-    </style>
   </head>
 
   <body class="bg-gray-50 flex flex-col min-h-screen font-montserrat">
     <header
       id="navbar"
-      class="fixed top-0 left-0 w-full z-50 transition duration-300 bg-primary shadow-lg">
+      class="fixed top-0 left-0 w-full z-50 transition duration-300 bg-navbar shadow-lg">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
           <a
             href="index.html"
             class="text-white font-extrabold text-sm sm:text-lg tracking-wider">
-            A4K72 JOURNEY WEB
+            Đại Từ Journey
           </a>
           <nav class="hidden lg:flex space-x-2 h-full">
             <ul class="flex items-center space-x-1 h-full">
@@ -180,29 +119,68 @@
 
       <div
         id="mobile-menu"
-        class="hidden lg:hidden absolute top-16 left-0 w-full bg-primary transition-transform duration-300 shadow-xl text-white">
+        class="hidden lg:hidden absolute top-16 left-0 w-full bg-primary transition-transform duration-300 shadow-xl">
         <div class="px-2 pt-2 pb-4 space-y-1">
-          <a href="index.html" class="block px-3 py-2 rounded-md hover:bg-white/10">Trang chủ</a>
+          <a href="index.html" class="mobile-nav-link active">Trang chủ</a>
+
           <div class="mobile-dropdown-container">
             <div
-              class="mobile-dropdown-header flex justify-between items-center px-3 py-2 hover:bg-white/10 cursor-pointer">
+              class="mobile-dropdown-header flex justify-between items-center bg-transparent hover:bg-white/5">
               Điểm du lịch
               <i
                 data-lucide="chevron-down"
                 class="w-4 h-4 ml-1 transition-transform"></i>
             </div>
-            <div class="mobile-dropdown-content hidden pl-4">
+            <div class="mobile-dropdown-content">
               <a
                 href="diem-du-lich.html#sinh-thai"
-                class="block px-3 py-2 text-sm text-gray-200 hover:text-white">
+                class="mobile-dropdown-item">
                 Du lịch sinh thái
               </a>
-              <a href="diem-du-lich.html#van-hoa" class="block px-3 py-2 text-sm text-gray-200 hover:text-white">
+              <a href="diem-du-lich.html#van-hoa" class="mobile-dropdown-item">
                 Du lịch văn hoá
               </a>
             </div>
           </div>
-          <a href="lien-he.html" class="block px-3 py-2 rounded-md hover:bg-white/10">Liên hệ</a>
+
+          <div class="mobile-dropdown-container">
+            <div
+              class="mobile-dropdown-header flex justify-between items-center bg-transparent hover:bg-white/5">
+              Ẩm thực
+              <i
+                data-lucide="chevron-down"
+                class="w-4 h-4 ml-1 transition-transform"></i>
+            </div>
+            <div class="mobile-dropdown-content">
+              <a href="am-thuc.html#dac-san" class="mobile-dropdown-item">
+                Đặc sản
+              </a>
+              <a href="am-thuc.html#mon-noi-bat" class="mobile-dropdown-item">
+                Món ăn nổi bật
+              </a>
+            </div>
+          </div>
+
+          <div class="mobile-dropdown-container">
+            <div
+              class="mobile-dropdown-header flex justify-between items-center bg-transparent hover:bg-white/5">
+              Lưu trú
+              <i
+                data-lucide="chevron-down"
+                class="w-4 h-4 ml-1 transition-transform"></i>
+            </div>
+            <div class="mobile-dropdown-content">
+              <a href="luu-tru.html#homestay" class="mobile-dropdown-item">
+                Homestay
+              </a>
+              <a href="luu-tru.html#camping" class="mobile-dropdown-item">
+                Lều - camping
+              </a>
+            </div>
+          </div>
+
+          <a href="di-chuyen.html" class="mobile-nav-link">Di chuyển</a>
+          <a href="lien-he.html" class="mobile-nav-link">Liên hệ</a>
         </div>
       </div>
     </header>
@@ -236,9 +214,9 @@
           </h2>
           <!-- Grid container -->
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
             <!-- Item 1: Cửa Tử -->
-            <div class="bg-white rounded-lg shadow p-4 flex flex-col h-full hover:shadow-xl transition-shadow">
+            <div
+              class="bg-white rounded-lg shadow p-4 flex flex-col h-full hover:shadow-xl transition-shadow">
               <img
                 src="images/luu-tru/CuaTuHomestay.jpg"
                 class="rounded mb-4 w-full h-64 object-cover"
@@ -260,12 +238,13 @@
             </div>
 
             <!-- Item 2: La Bằng Xanh -->
-            <div class="bg-white rounded-lg shadow p-4 flex flex-col h-full hover:shadow-xl transition-shadow">
+            <div
+              class="bg-white rounded-lg shadow p-4 flex flex-col h-full hover:shadow-xl transition-shadow">
               <img
                 src="images/luu-tru/LaBangHomestay.jpg"
                 class="rounded mb-4 w-full h-64 object-cover"
-                loading="lazy" 
-                alt="La Bằng Xanh Homestay"/>
+                loading="lazy"
+                alt="La Bằng Xanh Homestay" />
               <h3 class="text-xl font-bold text-primary">
                 La Bằng Xanh Homestay
               </h3>
@@ -284,9 +263,10 @@
             </div>
 
             <!-- Item 3: Hoàng Thánh Sáu -->
-            <div class="bg-white rounded-lg shadow p-4 flex flex-col h-full hover:shadow-xl transition-shadow">
+            <div
+              class="bg-white rounded-lg shadow p-4 flex flex-col h-full hover:shadow-xl transition-shadow">
               <img
-                src="images/luu-tru/HoangThanhSau.jpg" 
+                src="images/luu-tru/HoangThanhSau.jpg"
                 class="rounded mb-4 w-full h-64 object-cover"
                 loading="lazy"
                 alt="Gian bếp nhà sàn Hoàng Thánh Sáu Homestay"
@@ -296,22 +276,32 @@
               </h3>
               <div class="text-gray-600 text-sm mt-2 flex-grow">
                 <p class="mb-3 text-justify">
-                  Tận hưởng không gian nhà sàn đậm chất truyền thống kết hợp tiện nghi hiện đại. Là nơi lý tưởng để "trốn" khói bụi thành phố.
+                  Tận hưởng không gian nhà sàn đậm chất truyền thống kết hợp
+                  tiện nghi hiện đại. Là nơi lý tưởng để "trốn" khói bụi thành
+                  phố.
                 </p>
                 <div class="bg-gray-50 p-2 rounded border border-gray-100 mb-3">
-                  <p class="font-semibold text-xs text-primary mb-1">Trải nghiệm nổi bật:</p>
-                  <ul class="list-disc list-inside text-xs text-gray-600 space-y-1">
-                      <li>Tự tay hái và thưởng thức trái cây.</li>
-                      <li>Khu vực BBQ ngoài trời & đốt lửa trại.</li>
+                  <p class="font-semibold text-xs text-primary mb-1">
+                    Trải nghiệm nổi bật:
+                  </p>
+                  <ul
+                    class="list-disc list-inside text-xs text-gray-600 space-y-1">
+                    <li>Tự tay hái và thưởng thức trái cây.</li>
+                    <li>Khu vực BBQ ngoài trời & đốt lửa trại.</li>
                   </ul>
                 </div>
                 <p class="text-xs italic text-gray-500 border-t pt-2 mt-2">
-                  <i data-lucide="map-pin" class="w-3 h-3 inline mr-1 text-accent"></i>
+                  <i
+                    data-lucide="map-pin"
+                    class="w-3 h-3 inline mr-1 text-accent"></i>
                   Bản Quyên, Điềm Mặc, Định Hóa
                 </p>
               </div>
               <div class="mt-4 pt-4 border-t flex justify-between items-center">
-                <span class="text-green-600 font-bold text-lg">Từ 700.000đ<span class="text-xs text-gray-500 font-normal">/đêm</span></span>
+                <span class="text-green-600 font-bold text-lg">
+                  Từ 700.000đ
+                  <span class="text-xs text-gray-500 font-normal">/đêm</span>
+                </span>
                 <a
                   href="lien-he.html"
                   class="px-4 py-2 bg-primary text-white rounded hover:bg-green-900 transition-colors shadow-md transform hover:-translate-y-0.5">
@@ -321,9 +311,10 @@
             </div>
 
             <!-- Item 4: Khu sinh thái Cánh Buồm -->
-            <div class="bg-white rounded-lg shadow p-4 flex flex-col h-full hover:shadow-xl transition-shadow">
+            <div
+              class="bg-white rounded-lg shadow p-4 flex flex-col h-full hover:shadow-xl transition-shadow">
               <img
-                src="images/luu-tru/CanhBuom.jpg" 
+                src="images/luu-tru/CanhBuom.jpg"
                 class="rounded mb-4 w-full h-64 object-cover"
                 loading="lazy"
                 alt="Khu sinh thái Cánh Buồm"
@@ -333,23 +324,34 @@
               </h3>
               <div class="text-gray-600 text-sm mt-2 flex-grow">
                 <p class="mb-3 text-justify">
-                  Khu sinh thái Cánh Buồm là một điểm nghỉ dưỡng yên bình bên Hồ Núi Cốc, mang đến cho du khách không gian nghỉ ngơi sang trọng và hiện đại. Các phòng bungalow có diện tích rộng từ 50-60m², với đầy đủ tiện nghi và tầm nhìn tuyệt đẹp ra hồ.
+                  Khu sinh thái Cánh Buồm là một điểm nghỉ dưỡng yên bình bên Hồ
+                  Núi Cốc, mang đến cho du khách không gian nghỉ ngơi sang trọng
+                  và hiện đại. Các phòng bungalow có diện tích rộng từ 50-60m²,
+                  với đầy đủ tiện nghi và tầm nhìn tuyệt đẹp ra hồ.
                 </p>
                 <div class="bg-gray-50 p-2 rounded border border-gray-100 mb-3">
-                  <p class="font-semibold text-xs text-primary mb-1">Dịch vụ & Tiện ích:</p>
-                  <ul class="list-disc list-inside text-xs text-gray-600 space-y-1">
-                      <li>Chèo thuyền quanh Hồ Núi Cốc, lướt ván.</li>
-                      <li>Cơm gia đình, tiệc nướng BBQ giá hợp lý.</li>
-                      <li>Phù hợp cho gia đình và nhóm bạn.</li>
+                  <p class="font-semibold text-xs text-primary mb-1">
+                    Dịch vụ & Tiện ích:
+                  </p>
+                  <ul
+                    class="list-disc list-inside text-xs text-gray-600 space-y-1">
+                    <li>Chèo thuyền quanh Hồ Núi Cốc, lướt ván.</li>
+                    <li>Cơm gia đình, tiệc nướng BBQ giá hợp lý.</li>
+                    <li>Phù hợp cho gia đình và nhóm bạn.</li>
                   </ul>
                 </div>
                 <p class="text-xs italic text-gray-500 border-t pt-2 mt-2">
-                  <i data-lucide="map-pin" class="w-3 h-3 inline mr-1 text-accent"></i>
+                  <i
+                    data-lucide="map-pin"
+                    class="w-3 h-3 inline mr-1 text-accent"></i>
                   Xã Tân Thái, huyện Đại Từ, tỉnh Thái Nguyên
                 </p>
               </div>
               <div class="mt-4 pt-4 border-t flex justify-between items-center">
-                <span class="text-green-600 font-bold text-lg">400.000đ - 700.000đ<span class="text-xs text-gray-500 font-normal">/đêm</span></span>
+                <span class="text-green-600 font-bold text-lg">
+                  400.000đ - 700.000đ
+                  <span class="text-xs text-gray-500 font-normal">/đêm</span>
+                </span>
                 <a
                   href="lien-he.html"
                   class="px-4 py-2 bg-primary text-white rounded hover:bg-green-900 transition-colors shadow-md transform hover:-translate-y-0.5">
@@ -357,7 +359,6 @@
                 </a>
               </div>
             </div>
-
           </div>
         </section>
       </div>
@@ -387,12 +388,48 @@
         <div class="md:col-span-1">
           <h3 class="font-bold text-lg mb-4 text-accent">MENU NHANH</h3>
           <ul class="space-y-2 text-sm text-gray-300">
-            <li><a href="index.html" class="hover:text-white transition duration-200">Trang chủ</a></li>
-            <li><a href="diem-du-lich.html" class="hover:text-white transition duration-200">Điểm du lịch</a></li>
-            <li><a href="am-thuc.html" class="hover:text-white transition duration-200">Ẩm thực</a></li>
-            <li><a href="luu-tru.html" class="hover:text-white transition duration-200">Lưu trú</a></li>
-            <li><a href="di-chuyen.html" class="hover:text-white transition duration-200">Di chuyển</a></li>
-            <li><a href="lien-he.html" class="hover:text-white transition duration-200">Liên hệ</a></li>
+            <li>
+              <a
+                href="index.html"
+                class="hover:text-white transition duration-200">
+                Trang chủ
+              </a>
+            </li>
+            <li>
+              <a
+                href="diem-du-lich.html"
+                class="hover:text-white transition duration-200">
+                Điểm du lịch
+              </a>
+            </li>
+            <li>
+              <a
+                href="am-thuc.html"
+                class="hover:text-white transition duration-200">
+                Ẩm thực
+              </a>
+            </li>
+            <li>
+              <a
+                href="luu-tru.html"
+                class="hover:text-white transition duration-200">
+                Lưu trú
+              </a>
+            </li>
+            <li>
+              <a
+                href="di-chuyen.html"
+                class="hover:text-white transition duration-200">
+                Di chuyển
+              </a>
+            </li>
+            <li>
+              <a
+                href="lien-he.html"
+                class="hover:text-white transition duration-200">
+                Liên hệ
+              </a>
+            </li>
           </ul>
         </div>
       </div>

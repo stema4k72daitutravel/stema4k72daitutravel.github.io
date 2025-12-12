@@ -48,9 +48,9 @@
         theme: {
           extend: {
             colors: {
-              primary: "#1a472a", // Màu xanh đậm chủ đạo
+              primary: "#1a472a",
               secondary: "#2d5a27",
-              accent: "#d4a373", // Màu nhấn (cam đất/vàng)
+              accent: "#d4a373",
               footer: "#111827",
             },
             fontFamily: {
@@ -148,17 +148,18 @@
 
       <div
         id="mobile-menu"
-        class="hidden lg:hidden absolute top-16 left-0 w-full bg-primary transition-transform duration-300 shadow-xl text-white">
+        class="hidden lg:hidden absolute top-16 left-0 w-full bg-primary transition-transform duration-300 shadow-xl">
         <div class="px-2 pt-2 pb-4 space-y-1">
-          <a
-            href="index.html"
-            class="block px-3 py-2 rounded-md hover:bg-white/10">
-            Trang chủ
-          </a>
+          <a href="index.html" class="mobile-nav-link active">Trang chủ</a>
+
           <div class="mobile-dropdown-container">
             <div
-              class="mobile-dropdown-header flex justify-between items-center px-3 py-2 hover:bg-white/10 cursor-pointer">
-              Điểm du lịch
+              class="mobile-dropdown-header flex justify-between items-center bg-transparent hover:bg-white/5 cursor-pointer p-2 text-white">
+              <a
+                href="diem-du-lich.html"
+                class="mobile-nav-link block p-2 text-white hover:bg-white/5">
+                Điểm du lịch
+              </a>
               <i
                 data-lucide="chevron-down"
                 class="w-4 h-4 ml-1 transition-transform"></i>
@@ -166,20 +167,25 @@
             <div class="mobile-dropdown-content hidden pl-4">
               <a
                 href="diem-du-lich.html#sinh-thai"
-                class="block px-3 py-2 text-sm text-gray-200 hover:text-white">
+                class="mobile-dropdown-item block py-2 text-gray-300 hover:text-white">
                 Du lịch sinh thái
               </a>
               <a
                 href="diem-du-lich.html#van-hoa"
-                class="block px-3 py-2 text-sm text-gray-200 hover:text-white">
+                class="mobile-dropdown-item block py-2 text-gray-300 hover:text-white">
                 Du lịch văn hoá
               </a>
             </div>
           </div>
+
           <div class="mobile-dropdown-container">
             <div
-              class="mobile-dropdown-header flex justify-between items-center px-3 py-2 hover:bg-white/10 cursor-pointer">
-              Ẩm thực
+              class="mobile-dropdown-header flex justify-between items-center bg-transparent hover:bg-white/5 cursor-pointer p-2 text-white">
+              <a
+                href="am-thuc.html"
+                class="mobile-nav-link block p-2 text-white hover:bg-white/5">
+                Ẩm thực
+              </a>
               <i
                 data-lucide="chevron-down"
                 class="w-4 h-4 ml-1 transition-transform"></i>
@@ -187,20 +193,25 @@
             <div class="mobile-dropdown-content hidden pl-4">
               <a
                 href="am-thuc.html#dac-san"
-                class="block px-3 py-2 text-sm text-gray-200 hover:text-white">
+                class="mobile-dropdown-item block py-2 text-gray-300 hover:text-white">
                 Đặc sản
               </a>
               <a
                 href="am-thuc.html#mon-noi-bat"
-                class="block px-3 py-2 text-sm text-gray-200 hover:text-white">
+                class="mobile-dropdown-item block py-2 text-gray-300 hover:text-white">
                 Món ăn nổi bật
               </a>
             </div>
           </div>
+
           <div class="mobile-dropdown-container">
             <div
-              class="mobile-dropdown-header flex justify-between items-center px-3 py-2 hover:bg-white/10 cursor-pointer">
-              Lưu trú
+              class="mobile-dropdown-header flex justify-between items-center bg-transparent hover:bg-white/5 cursor-pointer p-2 text-white">
+              <a
+                href="luu-tru.html"
+                class="mobile-nav-link block p-2 text-white hover:bg-white/5">
+                Lưu trú
+              </a>
               <i
                 data-lucide="chevron-down"
                 class="w-4 h-4 ml-1 transition-transform"></i>
@@ -208,24 +219,25 @@
             <div class="mobile-dropdown-content hidden pl-4">
               <a
                 href="luu-tru.html#homestay"
-                class="block px-3 py-2 text-sm text-gray-200 hover:text-white">
+                class="mobile-dropdown-item block py-2 text-gray-300 hover:text-white">
                 Homestay
               </a>
               <a
                 href="luu-tru.html#camping"
-                class="block px-3 py-2 text-sm text-gray-200 hover:text-white">
+                class="mobile-dropdown-item block py-2 text-gray-300 hover:text-white">
                 Lều - camping
               </a>
             </div>
           </div>
+
           <a
             href="di-chuyen.html"
-            class="block px-3 py-2 rounded-md hover:bg-white/10">
+            class="mobile-nav-link block p-2 text-white hover:bg-white/5">
             Di chuyển
           </a>
           <a
             href="lien-he.html"
-            class="block px-3 py-2 rounded-md hover:bg-white/10">
+            class="mobile-nav-link block p-2 text-white hover:bg-white/5">
             Liên hệ
           </a>
         </div>
@@ -468,20 +480,6 @@
             thông tin du lịch, ẩm thực và lưu trú tốt nhất cho hành trình của
             bạn.
           </p>
-          <!-- <div class="flex space-x-4">
-            <a href="#" class="text-gray-400 hover:text-white transition">
-              <i data-lucide="facebook"></i>
-              Facebook
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white transition">
-              <i data-lucide="instagram"></i>
-              Instagram
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white transition">
-              <i data-lucide="youtube"></i>
-              YouTube
-            </a>
-          </div> -->
         </div>
 
         <div class="md:col-span-1">
@@ -534,7 +532,7 @@
       </div>
       <div
         class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
-        &copy; 2024 Đại Từ Journey. All rights reserved. Designed by A4K72.
+        © 2024 Đại Từ Journey. All rights reserved. Designed by A4K72.
       </div>
     </footer>
 
@@ -631,8 +629,8 @@
     </div>
 
     <script src="scripts/modal.js"></script>
-    <script src="scripts/mobileMenu.js"></script>
     <script src="scripts/smartNavbar.js"></script>
     <script src="scripts/smoothScroll.js"></script>
+    <script src="scripts/mobileMenu.js"></script>
   </body>
 </html>
