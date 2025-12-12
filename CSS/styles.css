@@ -14,7 +14,8 @@ body {
 }
 
 /* Màu chủ đạo */
-.bg-primary { background-color: #2a6a1e; }
+.bg-primary { background-color: #102A0E; }
+.bg-navbar { background-color: #102A0E; }
 .bg-footer { background-color: #102A0E; }
 .bg-header { color: rgba(0,0,0); }
 .text-accent { color: #FFDE59; }
