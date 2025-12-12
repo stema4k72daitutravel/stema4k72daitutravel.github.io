@@ -15,20 +15,15 @@ body {
 
 /* Màu chủ đạo */
 .bg-primary { background-color: #102A0E; }
+<<<<<<< HEAD
 .bg-navbar { background-color: #102A0E; }
 .bg-footer { background-color: #102A0E; }
 .bg-header { color: rgba(0,0,0); }
+=======
+>>>>>>> parent of 1747550 (Add files via upload)
 .text-accent { color: #FFDE59; }
 .border-accent { border-color: #FFDE59; }
 .hover-accent:hover { color: #FFDE59; }
-
-.scrolled { background-color: rgb(0,0,0); }
-
-.navbar-hidden { transform: translateY(-100%); }
-
-.text-shadow-basic {
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
 
 /* Styles cho Navbar links và Dropdown */
 .nav-link {
