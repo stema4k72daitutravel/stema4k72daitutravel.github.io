@@ -33,21 +33,34 @@ mapBtns.forEach((btn) => {
 // Dữ liệu nội dung (Có thể mở rộng thêm)
 const contentData = {
   tra: {
-    title: "Văn hoá Trà tại Hoàng Nông Farm",
+    title: "Hoàng Nông Farm",
     images: [
       "https://media.baothainguyen.vn/upload/2021/11/04/13/46/52e519c2-ab16-43f1-a128-46c59b20752d.jpg",
       "https://media.dulich24.com.vn/bai-viet/du-lich-moc-chau-trai-nghiem-nhung-dieu-thu-vi-46020241/du-lich-moc-chau-trai-nghiem-nhung-dieu-thu-vi.jpg",
       "https://hoangnongfarm.vn/wp-content/uploads/2023/10/trai-nghiem-hai-che-1.jpg",
     ],
     desc: `
-                    <h4 class="font-bold text-lg text-primary mb-2">1. Không gian văn hóa trà độc đáo</h4>
-                    <p>Đến với Hoàng Nông Farm, du khách không chỉ được ngắm nhìn những đồi chè xanh bát ngát trải dài tít tắp mà còn được trực tiếp tham gia vào quy trình sản xuất trà truyền thống của người dân Đại Từ. Đây là nơi hội tụ tinh hoa của vùng chè Thái Nguyên danh tiếng.</p>
+                    <h4 class="font-bold text-lg text-primary mb-2">1. Hoàng Nông Farm ở đâu?</h4>
+                    <p>Hoàng Nông Farm là một farmstay xinh đẹp nằm ở xã Hoàng Nông, huyện Đại Từ, tỉnh Thái Nguyên. Farmstay Hoàng Nông nằm cách trung tâm thành phố Thái Nguyên khoảng 35 km. Để đến được đây, du khách di chuyển theo hướng Quốc Lộ 37, sau đó rẽ vào UBND xã Hoàng Nông và đi theo đường suối Cửa Tử là đến với farmstay xinh đẹp này.</p>
                     
-                    <h4 class="font-bold text-lg text-primary mb-2 mt-4">2. Trải nghiệm thực tế "Một ngày làm nông dân"</h4>
-                    <p>Bạn sẽ được hóa thân thành những "nghệ nhân" hái chè thực thụ với gùi tre trên vai, học cách hái "một tôm hai lá" đúng chuẩn. Sau đó, dưới sự hướng dẫn của các nghệ nhân, bạn sẽ tự tay sao chè bằng chảo gang trên bếp củi truyền thống, cảm nhận hương thơm ngào ngạt lan tỏa trong không gian.</p>
+                    <h4 class="font-bold text-lg text-primary mb-2 mt-4">2. Dịch vụ lưu trú</h4>
+                    <p>Hoàng Nông Farm cung cấp dịch vụ lưu trú linh hoạt (trong ngày, qua đêm, hoặc dài ngày với giá ưu đãi) trong các loại phòng từ homestay nhà sàn truyền thống đến phòng tiêu chuẩn khách sạn hiện đại, đảm bảo sạch sẽ, ấm cúng. </p>
                     
-                    <h4 class="font-bold text-lg text-primary mb-2 mt-4">3. Thưởng trà và Check-in</h4>
-                    <p>Cuối cùng là giây phút thư giãn nhất: tự tay pha và thưởng thức những ấm trà thơm ngon do chính mình làm ra. Ngoài ra, không gian tại đây cực kỳ thích hợp để check-in với những bộ ảnh mang phong cách nàng thơ, vintage giữa thiên nhiên hùng vĩ hay bên những ấm trà đạo cụ được sắp xếp tinh tế.</p>
+                    <h4 class="font-bold text-lg text-primary mb-2 mt-4">3.Trải nghiệm hấp dẫn khác </h4>
+                    <p>Dịch vụ ăn uống: Khách lưu trú đều được phục vụ các bữa ăn ngon phong cách làng quê Bắc Bộ, chế biến từ nguồn nguyên liệu sạch, tươi ngon tại địa phương.
+
+Trải nghiệm nổi bật:
+
+Tham quan và làm nông: Thăm vườn, hái rau củ quả và đặc biệt là hái chè vào buổi sáng sớm.
+
+Khám phá thiên nhiên: Trekking rừng và chinh phục suối thác Cửa Tử (nằm gần rừng quốc gia Tam Đảo), với sự hướng dẫn của chủ farmstay. Trải nghiệm bao gồm đi qua đường rừng hoang sơ và tắm mình dưới làn nước mát lạnh của thác.</p>
+                    <h4 class="font-bold text-lg text-primary mb-2 mt-4">2. Bảng giá các dịch vụ tại Hoàng Nông Fam</h4>
+                    <p>Combo lưu trú qua đêm 990k/người/đêm bao gồm: ăn tối, phòng nghỉ, ăn sáng
+Combo lưu trú qua đêm 790k/người/đêm bao gồm: ăn tối, phòng nghỉ, ăn sáng
+Combo lưu trú qua đêm 690k/người/đêm bao gồm: ăn tối, phòng nghỉ, ăn sáng
+Combo lưu trú qua đêm 690k/người/đêm 
+Combo lưu trú trong ngày 590k/người bao gồm ăn trưa và phòng nghỉ 
+(*) Mức giá khác nhau của các combo lưu trú là vì sự khác biệt trong các loại phòng mà du khách chọn nghỉ qua đêm. </p>
                 `,
   },
   mojen: {
@@ -130,3 +143,4 @@ document.addEventListener("keydown", (e) => {
     closeMap();
   }
 });
+
