@@ -1,147 +1,177 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Great+Vibes&family=Merriweather:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Great+Vibes&family=Merriweather:wght@700&display=swap");
 /* Định nghĩa Font-family tùy chỉnh */
-.font-luxutois { /* Luxutois Script placeholder */
-    font-family: 'Great Vibes', cursive;
+.font-luxutois {
+  /* Luxutois Script placeholder */
+  font-family: "Great Vibes", cursive;
 }
-.font-merriweather { /* Safira March (Serif, Vietnamese compatible) */
-    font-family: 'Merriweather', serif;
+.font-merriweather {
+  /* Safira March (Serif, Vietnamese compatible) */
+  font-family: "Merriweather", serif;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    color: #1f2937;
-    scroll-behavior: smooth;
+  font-family: "Montserrat", sans-serif;
+  color: #1f2937;
+  scroll-behavior: smooth;
 }
 
 /* Màu chủ đạo */
-.bg-primary { background-color: #102A0E; }
-.bg-navbar { background-color: #102A0E; }
-.bg-footer { background-color: #102A0E; }
-.bg-header { color: rgba(0,0,0); }
-.text-accent { color: #FFDE59; }
-.border-accent { border-color: #FFDE59; }
-.hover-accent:hover { color: #FFDE59; }
+.bg-primary {
+  background-color: #102a0e;
+}
+.bg-navbar {
+  /* background-color: #102a0e; */
+  background-color: rgb(16, 42, 14);
+}
+.bg-footer {
+  background-color: #102a0e;
+}
+.bg-header {
+  color: rgba(0, 0, 0);
+}
+.text-accent {
+  color: #ffde59;
+}
+.border-accent {
+  border-color: #ffde59;
+}
+.hover-accent:hover {
+  color: #ffde59;
+}
 
-.scrolled { background-color: rgb(0,0,0); }
+.scrolled {
+  background-color: rgb(0, 0, 0);
+}
 
-.navbar-hidden { transform: translateY(-100%); }
+.navbar-hidden {
+  transform: translateY(-100%);
+}
 
 .text-shadow-basic {
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Styles cho Navbar links và Dropdown */
 .nav-link {
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    height: 100%;
-    padding: 0 10px;
-    transition: color 0.3s;
-    border-bottom: 3px solid transparent; 
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 10px;
+  transition: color 0.3s;
+  border-bottom: 3px solid transparent;
 }
-.nav-link:hover, .nav-link.active {
-    color: #FFDE59;
-    border-bottom-color: #FFDE59;
+.nav-link:hover,
+.nav-link.active {
+  color: #ffde59;
+  border-bottom-color: #ffde59;
 }
 
 /* Dropdown Menu (Desktop) */
 .dropdown-menu {
-    position: absolute;
-    top: 100%; 
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #102A0E;
-    min-width: 180px;
-    z-index: 100;
-    padding: 5px 0;
-    border-radius: 0 0 8px 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease-out;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #102a0e;
+  min-width: 180px;
+  z-index: 100;
+  padding: 5px 0;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-out;
 }
 .group:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 .dropdown-item {
-    display: block;
-    padding: 10px 20px;
-    color: #FFFFFF;
-    font-size: 14px;
-    text-decoration: none;
+  display: block;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 14px;
+  text-decoration: none;
 }
 .dropdown-item:hover {
-    background-color: rgba(255, 222, 89, 0.1);
-    color: #FFDE59;
+  background-color: rgba(255, 222, 89, 0.1);
+  color: #ffde59;
 }
 
 /* Mobile Menu */
-.mobile-nav-link, .mobile-dropdown-header {
-    display: block;
-    padding: 12px 15px;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: all 0.2s;
+.mobile-nav-link,
+.mobile-dropdown-header {
+  display: block;
+  padding: 12px 15px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
 }
-.mobile-nav-link:hover, .mobile-dropdown-item:hover {
-    color: #FFDE59;
-    background-color: rgba(255, 222, 89, 0.05);
+.mobile-nav-link:hover,
+.mobile-dropdown-item:hover {
+  color: #ffde59;
+  background-color: rgba(255, 222, 89, 0.05);
 }
 .mobile-dropdown-item {
-    display: block;
-    padding: 8px 30px;
-    color: #d1d5db;
-    font-size: 14px;
+  display: block;
+  padding: 8px 30px;
+  color: #d1d5db;
+  font-size: 14px;
 }
 .mobile-dropdown-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
 }
 .mobile-dropdown-content.open {
-    max-height: 500px; /* Giá trị lớn để chứa nội dung */
+  max-height: 500px; /* Giá trị lớn để chứa nội dung */
 }
-
 
 /* Google Maps classes */
 /* CSS tuỳ chỉnh thêm cho bản đồ để đảm bảo responsive */
 .map-responsive-container iframe {
-    width: 100% !important;
-    height: 400px !important;
+  width: 100% !important;
+  height: 400px !important;
 }
-.mapouter, .gmap_canvas {
-    width: 100% !important;
-    max-width: 600px;
+.mapouter,
+.gmap_canvas {
+  width: 100% !important;
+  max-width: 600px;
 }
 
 /* Modal */
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .animate-fade-in-up {
-    animation: fadeInUp 0.3s ease-out forwards;
+  animation: fadeInUp 0.3s ease-out forwards;
 }
 
 /* Tùy chỉnh thanh cuộn cho Modal (Scrollbar đẹp hơn) */
 .custom-scrollbar::-webkit-scrollbar {
-    width: 6px;
+  width: 6px;
 }
 .custom-scrollbar::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 4px;
+  background: #f1f1f1;
+  border-radius: 4px;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 4px;
+  background: #888;
+  border-radius: 4px;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #555;
+  background: #555;
 }
