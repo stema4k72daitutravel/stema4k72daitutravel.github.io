@@ -51,7 +51,10 @@
           </a>
           <nav class="hidden lg:flex space-x-2 h-full">
             <ul class="flex items-center space-x-1 h-full">
-              <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+              <li class="h-full flex items-center">
+                <a href="index.html" class="nav-link">Trang chủ</a>
+              </li>
+
               <li class="group relative flex items-center h-full">
                 <a
                   href="diem-du-lich.html"
@@ -70,6 +73,7 @@
                   </a>
                 </div>
               </li>
+
               <li class="group relative flex items-center h-full">
                 <a href="am-thuc.html" class="nav-link flex items-center">
                   Ẩm thực
@@ -86,6 +90,7 @@
                   </a>
                 </div>
               </li>
+
               <li class="group relative flex items-center h-full">
                 <a href="luu-tru.html" class="nav-link flex items-center">
                   Lưu trú
@@ -102,8 +107,14 @@
                   </a>
                 </div>
               </li>
-              <li><a href="di-chuyen.html" class="nav-link">Di chuyển</a></li>
-              <li><a href="lien-he.html" class="nav-link">Liên hệ</a></li>
+
+              <li class="h-full flex items-center">
+                <a href="di-chuyen.html" class="nav-link">Di chuyển</a>
+              </li>
+
+              <li class="h-full flex items-center">
+                <a href="lien-he.html" class="nav-link">Liên hệ</a>
+              </li>
             </ul>
           </nav>
           <button
@@ -244,7 +255,7 @@
             <button
               type="button"
               data-map-src="https://maps.google.com/maps?width=600&height=400&hl=en&q=Công Viên Nước Hồ Núi Cốc&t=&z=14&ie=UTF8&iwloc=B&output=embed"
-              class="btn-view-map inline-block px-6 py-2 bg-primary text-white rounded-full hover:bg-green-900 transition cursor-pointer shadow-md transform hover:-translate-y-1">
+              class="btn-view-map inline-flex items-center px-6 py-2 bg-primary text-white rounded-full hover:bg-green-900 transition shadow-md hover:-translate-y-1">
               Xem bản đồ
             </button>
           </div>
@@ -280,7 +291,7 @@
             <button
               type="button"
               data-map-src="https://maps.google.com/maps?width=600&height=400&hl=en&q=Suối Cửa Tử&t=&z=14&ie=UTF8&iwloc=B&output=embed"
-              class="btn-view-map inline-block px-6 py-2 bg-primary text-white rounded-full hover:bg-green-900 transition cursor-pointer shadow-md transform hover:-translate-y-1">
+              class="btn-view-map inline-flex items-center px-6 py-2 bg-primary text-white rounded-full hover:bg-green-900 transition shadow-md hover:-translate-y-1">
               Xem bản đồ
             </button>
           </div>
@@ -316,7 +327,7 @@
             <button
               type="button"
               data-map-src="https://maps.google.com/maps?width=600&height=400&hl=en&q=Suối Kẹm&t=&z=14&ie=UTF8&iwloc=B&output=embed"
-              class="btn-view-map inline-block px-6 py-2 bg-primary text-white rounded-full hover:bg-green-900 transition cursor-pointer shadow-md transform hover:-translate-y-1">
+              class="btn-view-map inline-flex items-center px-6 py-2 bg-primary text-white rounded-full hover:bg-green-900 transition shadow-md hover:-translate-y-1">
               Xem bản đồ
             </button>
           </div>
@@ -352,7 +363,7 @@
             <button
               type="button"
               data-map-src="https://maps.google.com/maps?width=600&height=400&hl=en&q=Thác Đá Cổng&t=&z=14&ie=UTF8&iwloc=B&output=embed"
-              class="btn-view-map inline-block px-6 py-2 bg-primary text-white rounded-full hover:bg-green-900 transition cursor-pointer shadow-md transform hover:-translate-y-1">
+              class="btn-view-map inline-flex items-center px-6 py-2 bg-primary text-white rounded-full hover:bg-green-900 transition shadow-md hover:-translate-y-1">
               Xem bản đồ
             </button>
           </div>
@@ -422,7 +433,7 @@
                 các góc check-in sống ảo có "1-0-2"
               </p>
               <button
-                onclick="openContentModal('mojen')"
+                onclick="openContentModal('doicafe')"
                 class="text-primary font-semibold text-sm hover:text-accent mt-auto flex items-center transition-colors">
                 Tìm hiểu thêm
                 <span class="ml-1 text-lg">→</span>

@@ -37,11 +37,18 @@
           </a>
           <nav class="hidden lg:flex space-x-2 h-full">
             <ul class="flex items-center space-x-1 h-full">
-              <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+              <li class="h-full flex items-center">
+                <a href="index.html" class="nav-link">Trang chủ</a>
+              </li>
+
               <li class="group relative flex items-center h-full">
-                <a href="diem-du-lich.html" class="nav-link flex items-center">
+                <a
+                  href="diem-du-lich.html"
+                  class="nav-link active flex items-center">
                   Điểm du lịch
-                  <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                  <i
+                    data-lucide="chevron-down"
+                    class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180"></i>
                 </a>
                 <div class="dropdown-menu">
                   <a href="diem-du-lich.html#sinh-thai" class="dropdown-item">
@@ -52,10 +59,13 @@
                   </a>
                 </div>
               </li>
+
               <li class="group relative flex items-center h-full">
                 <a href="am-thuc.html" class="nav-link flex items-center">
                   Ẩm thực
-                  <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                  <i
+                    data-lucide="chevron-down"
+                    class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180"></i>
                 </a>
                 <div class="dropdown-menu">
                   <a href="am-thuc.html#dac-san" class="dropdown-item">
@@ -66,10 +76,13 @@
                   </a>
                 </div>
               </li>
+
               <li class="group relative flex items-center h-full">
                 <a href="luu-tru.html" class="nav-link flex items-center">
                   Lưu trú
-                  <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                  <i
+                    data-lucide="chevron-down"
+                    class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180"></i>
                 </a>
                 <div class="dropdown-menu">
                   <a href="luu-tru.html#homestay" class="dropdown-item">
@@ -80,10 +93,14 @@
                   </a>
                 </div>
               </li>
-              <li>
-                <a href="di-chuyen.html" class="nav-link active">Di chuyển</a>
+
+              <li class="h-full flex items-center">
+                <a href="di-chuyen.html" class="nav-link">Di chuyển</a>
               </li>
-              <li><a href="lien-he.html" class="nav-link">Liên hệ</a></li>
+
+              <li class="h-full flex items-center">
+                <a href="lien-he.html" class="nav-link">Liên hệ</a>
+              </li>
             </ul>
           </nav>
           <button

@@ -1,59 +1,69 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Great+Vibes&family=Merriweather:wght@700&display=swap");
-/* Định nghĩa Font-family tùy chỉnh */
-.font-luxutois {
-  /* Luxutois Script placeholder */
-  font-family: "Great Vibes", cursive;
-}
-.font-merriweather {
-  /* Safira March (Serif, Vietnamese compatible) */
-  font-family: "Merriweather", serif;
+
+/* === 1. BIẾN CSS (Dễ dàng quản lý màu sắc) === */
+:root {
+  --color-primary: #102a0e; /* Màu xanh rêu đậm */
+  --color-accent: #ffde59; /* Màu vàng điểm nhấn */
+  --color-text-main: #1f2937; /* Màu chữ chính */
+  --color-white: #ffffff;
+  --shadow-basic: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  --transition-speed: 0.3s;
 }
 
+/* === 2. CẤU HÌNH CHUNG === */
 body {
   font-family: "Montserrat", sans-serif;
-  color: #1f2937;
+  color: var(--color-text-main);
   scroll-behavior: smooth;
 }
 
-/* Màu chủ đạo */
-.bg-primary {
-  background-color: #102a0e;
+/* Font Custom */
+.font-luxutois {
+  font-family: "Great Vibes", cursive;
 }
-.bg-navbar {
-  /* background-color: #102a0e; */
-  background-color: rgb(16, 42, 14);
+.font-merriweather {
+  font-family: "Merriweather", serif;
 }
+
+/* === 3. UTILITIES MÀU SẮC === */
+/* Gộp các class dùng chung màu nền */
+.bg-primary,
+.bg-navbar,
 .bg-footer {
-  background-color: #102a0e;
+  background-color: var(--color-primary);
 }
-.bg-header {
-  color: rgba(0, 0, 0);
-}
+
 .text-accent {
-  color: #ffde59;
+  color: var(--color-accent);
 }
 .border-accent {
-  border-color: #ffde59;
+  border-color: var(--color-accent);
 }
 .hover-accent:hover {
-  color: #ffde59;
+  color: var(--color-accent);
+}
+
+/* Class này tên là bg-header nhưng lại set màu chữ? 
+   Nếu đúng ý đồ thì giữ nguyên, nhưng hơi gây hiểu lầm */
+.bg-header {
+  color: #000;
 }
 
 .scrolled {
-  background-color: rgb(0, 0, 0);
+  background-color: #000;
 }
 
+.text-shadow-basic {
+  text-shadow: var(--shadow-basic);
+}
+
+/* === 4. NAVBAR & MENU === */
 .navbar-hidden {
   transform: translateY(-100%);
 }
 
-.text-shadow-basic {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-/* Styles cho Navbar links và Dropdown */
 .nav-link {
-  color: #ffffff;
+  color: var(--color-white);
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
@@ -61,13 +71,14 @@ body {
   align-items: center;
   height: 100%;
   padding: 0 10px;
-  transition: color 0.3s;
+  transition: color var(--transition-speed);
   border-bottom: 3px solid transparent;
 }
+
 .nav-link:hover,
 .nav-link.active {
-  color: #ffde59;
-  border-bottom-color: #ffde59;
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
 }
 
 /* Dropdown Menu (Desktop) */
@@ -76,30 +87,36 @@ body {
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #102a0e;
+  background-color: var(--color-primary);
   min-width: 180px;
   z-index: 100;
   padding: 5px 0;
   border-radius: 0 0 8px 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+  /* Hiệu ứng ẩn hiện */
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease-out;
+  transition: all var(--transition-speed) ease-out;
 }
+
 .group:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
 }
+
 .dropdown-item {
   display: block;
   padding: 10px 20px;
-  color: #ffffff;
+  color: var(--color-white);
   font-size: 14px;
   text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
 }
+
 .dropdown-item:hover {
   background-color: rgba(255, 222, 89, 0.1);
-  color: #ffde59;
+  color: var(--color-accent);
 }
 
 /* Mobile Menu */
@@ -107,45 +124,51 @@ body {
 .mobile-dropdown-header {
   display: block;
   padding: 12px 15px;
-  color: white;
+  color: var(--color-white);
   font-weight: 600;
   cursor: pointer;
   border-radius: 4px;
   transition: all 0.2s;
 }
+
 .mobile-nav-link:hover,
-.mobile-dropdown-item:hover {
-  color: #ffde59;
+.mobile-dropdown-item:hover,
+.mobile-dropdown-header:hover {
+  color: var(--color-accent);
   background-color: rgba(255, 222, 89, 0.05);
 }
+
 .mobile-dropdown-item {
   display: block;
   padding: 8px 30px;
   color: #d1d5db;
   font-size: 14px;
+  transition: color 0.2s;
 }
+
 .mobile-dropdown-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease-in-out;
-}
-.mobile-dropdown-content.open {
-  max-height: 500px; /* Giá trị lớn để chứa nội dung */
+  transition: max-height var(--transition-speed) ease-in-out;
 }
 
-/* Google Maps classes */
-/* CSS tuỳ chỉnh thêm cho bản đồ để đảm bảo responsive */
+.mobile-dropdown-content.open {
+  max-height: 500px;
+}
+
+/* === 5. GOOGLE MAPS & MODAL === */
 .map-responsive-container iframe {
   width: 100% !important;
   height: 400px !important;
 }
+
 .mapouter,
 .gmap_canvas {
   width: 100% !important;
   max-width: 600px;
 }
 
-/* Modal */
+/* Animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -156,11 +179,12 @@ body {
     transform: translateY(0);
   }
 }
+
 .animate-fade-in-up {
-  animation: fadeInUp 0.3s ease-out forwards;
+  animation: fadeInUp var(--transition-speed) ease-out forwards;
 }
 
-/* Tùy chỉnh thanh cuộn cho Modal (Scrollbar đẹp hơn) */
+/* Custom Scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
 }
