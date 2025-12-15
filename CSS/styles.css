@@ -28,9 +28,12 @@ body {
 /* === 3. UTILITIES MÀU SẮC === */
 /* Gộp các class dùng chung màu nền */
 .bg-primary,
-.bg-navbar,
 .bg-footer {
   background-color: var(--color-primary);
+}
+
+.bg-navbar {
+  background-color: #226617;
 }
 
 .text-accent {
